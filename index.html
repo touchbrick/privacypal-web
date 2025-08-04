@@ -802,12 +802,12 @@
             <div class="modal-body">
                 <div class="modal-loading" id="modalLoading">
                     <div class="loading-spinner"></div>
-                    Loading form...
+                    <div>Loading form...</div>
                 </div>
                 <iframe 
                     id="waitlistForm" 
                     class="form-iframe" 
-                    src=""
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSdVifw1avvSktOoKS8zpmvA0S1vmQfMeopElMvVPPXGQwHk2A/viewform?embedded=true"
                     width="640" 
                     height="812" 
                     frameborder="0" 
@@ -834,21 +834,34 @@
             modal.classList.add('show');
             document.body.style.overflow = 'hidden'; // Prevent background scrolling
             
-            // Load the form if not already loaded
-            if (!iframe.src) {
-                loading.style.display = 'flex';
-                iframe.style.display = 'none';
-                
-                // Set up the onload handler before setting src
-                iframe.onload = function() {
+            // Show loading initially
+            loading.style.display = 'flex';
+            iframe.style.display = 'none';
+            
+            // Try to detect if iframe loads successfully
+            let iframeLoaded = false;
+            
+            // Set up iframe load detection
+            iframe.onload = function() {
+                console.log('Iframe loaded');
+                iframeLoaded = true;
+                hideModalLoading();
+            };
+            
+            // Fallback timeout - if iframe doesn't load in 5 seconds, show it anyway
+            setTimeout(() => {
+                if (!iframeLoaded) {
+                    console.log('Iframe timeout - showing anyway');
                     hideModalLoading();
-                };
-                
-                iframe.src = GOOGLE_FORMS_URL;
-            } else {
-                loading.style.display = 'none';
-                iframe.style.display = 'block';
-            }
+                }
+            }, 5000);
+            
+            // Also try to force show after 3 seconds
+            setTimeout(() => {
+                if (!iframeLoaded) {
+                    hideModalLoading();
+                }
+            }, 3000);
         }
         
         function closeWaitlistModal() {
@@ -877,6 +890,19 @@
             if (event.key === 'Escape') {
                 closeWaitlistModal();
             }
+        });
+
+        // Set up iframe loading detection when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            const iframe = document.getElementById('waitlistForm');
+            
+            iframe.onload = function() {
+                console.log('Google Form iframe loaded successfully');
+            };
+            
+            iframe.onerror = function() {
+                console.error('Failed to load Google Form iframe');
+            };
         });
 
         // Simple countdown timer
