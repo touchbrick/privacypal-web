@@ -511,9 +511,9 @@
             border-radius: 25px;
             border: 1px solid rgba(139, 102, 192, 0.3);
             width: 90%;
-            max-width: 800px;
-            height: 80vh;
-            max-height: 700px;
+            max-width: 700px;
+            height: 85vh;
+            max-height: 900px;
             position: relative;
             overflow: hidden;
             box-shadow: 0 25px 50px rgba(139, 102, 192, 0.3);
@@ -572,7 +572,7 @@
         .modal-body {
             flex: 1;
             padding: 20px;
-            overflow: hidden;
+            overflow: auto;
         }
 
         .form-iframe {
@@ -581,6 +581,7 @@
             border: none;
             border-radius: 15px;
             background: white;
+            min-height: 500px;
         }
 
         .modal-loading {
@@ -807,15 +808,21 @@
                     id="waitlistForm" 
                     class="form-iframe" 
                     src=""
+                    width="640" 
+                    height="812" 
+                    frameborder="0" 
+                    marginheight="0" 
+                    marginwidth="0"
                     style="display: none;">
+                    Loading…
                 </iframe>
             </div>
         </div>
     </div>
 
     <script>
-        // Google Forms URL - Replace this with your actual Google Forms URL
-        const GOOGLE_FORMS_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSdVifw1avvSktOoKS8zpmvA0S1vmQfMeopElMvVPPXGQwHk2A/viewform?usp=header';
+        // Google Forms URL - Using the exact embedded URL from Google
+        const GOOGLE_FORMS_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSdVifw1avvSktOoKS8zpmvA0S1vmQfMeopElMvVPPXGQwHk2A/viewform?embedded=true';
         
         // Modal functions
         function openWaitlistModal() {
