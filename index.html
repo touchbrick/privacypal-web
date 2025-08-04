@@ -484,6 +484,165 @@
             margin: 0 auto;
             line-height: 1.6;
         }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(45, 27, 78, 0.8);
+            backdrop-filter: blur(5px);
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .modal.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            border: 1px solid rgba(139, 102, 192, 0.3);
+            width: 90%;
+            max-width: 800px;
+            height: 80vh;
+            max-height: 700px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(139, 102, 192, 0.3);
+            animation: modalSlideIn 0.4s ease-out;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modal-header {
+            padding: 30px 40px 20px;
+            border-bottom: 1px solid rgba(139, 102, 192, 0.2);
+            position: relative;
+        }
+
+        .modal-title {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #2d1b4e, #8b66c0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0;
+            text-align: center;
+        }
+
+        .modal-subtitle {
+            color: #6b4c9a;
+            text-align: center;
+            margin: 10px 0 0;
+            font-size: 1.1rem;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: #8b66c0;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .modal-close:hover {
+            background: rgba(139, 102, 192, 0.1);
+            transform: scale(1.1);
+        }
+
+        .modal-body {
+            flex: 1;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .form-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 15px;
+            background: white;
+        }
+
+        .modal-loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: #8b66c0;
+            font-size: 1.2rem;
+        }
+
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(139, 102, 192, 0.3);
+            border-top: 3px solid #8b66c0;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 15px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8) translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Responsive modal */
+        @media (max-width: 768px) {
+            .modal-content {
+                width: 95%;
+                height: 85vh;
+                margin: 20px;
+            }
+            
+            .modal-header {
+                padding: 20px 25px 15px;
+            }
+            
+            .modal-title {
+                font-size: 1.5rem;
+            }
+            
+            .modal-body {
+                padding: 15px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -519,7 +678,7 @@
                     generative AI while maintaining complete data sovereignty and privacy.
                 </div>
                 <div class="cta-container">
-                    <a href="#" class="cta-button">Join the Waitlist</a>
+                    <a href="#" class="cta-button" onclick="openWaitlistModal()">Join the Waitlist</a>
                     <div class="early-access">Beta Access Coming Soon</div>
                 </div>
             </div>
@@ -604,7 +763,7 @@
             </div>
             
             <div style="margin-top: 40px;">
-                <a href="#" class="cta-button">Request Beta Access</a>
+                <a href="#" class="cta-button" onclick="openWaitlistModal()">Request Beta Access</a>
             </div>
         </div>
     </section>
@@ -631,7 +790,88 @@
         </div>
     </footer>
 
+    <!-- Waitlist Modal -->
+    <div id="waitlistModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Join the Revolution</h2>
+                <p class="modal-subtitle">Be among the first to experience AI without compromise</p>
+                <button class="modal-close" onclick="closeWaitlistModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-loading" id="modalLoading">
+                    <div class="loading-spinner"></div>
+                    Loading form...
+                </div>
+                <iframe 
+                    id="waitlistForm" 
+                    class="form-iframe" 
+                    src=""
+                    style="display: none;">
+                </iframe>
+            </div>
+        </div>
+    </div>
+
     <script>
+        // Google Forms URL - Replace this with your actual Google Forms URL
+        const GOOGLE_FORMS_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSdVifw1avvSktOoKS8zpmvA0S1vmQfMeopElMvVPPXGQwHk2A/viewform?usp=header';
+        
+        // Modal functions
+        function openWaitlistModal() {
+            const modal = document.getElementById('waitlistModal');
+            const iframe = document.getElementById('waitlistForm');
+            const loading = document.getElementById('modalLoading');
+            
+            // Show modal
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            
+            // Load the form if not already loaded
+            if (!iframe.src) {
+                loading.style.display = 'flex';
+                iframe.style.display = 'none';
+                
+                // Set up the onload handler before setting src
+                iframe.onload = function() {
+                    hideModalLoading();
+                };
+                
+                iframe.src = GOOGLE_FORMS_URL;
+            } else {
+                loading.style.display = 'none';
+                iframe.style.display = 'block';
+            }
+        }
+        
+        function closeWaitlistModal() {
+            const modal = document.getElementById('waitlistModal');
+            modal.classList.remove('show');
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+        
+        function hideModalLoading() {
+            const loading = document.getElementById('modalLoading');
+            const iframe = document.getElementById('waitlistForm');
+            loading.style.display = 'none';
+            iframe.style.display = 'block';
+        }
+        
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('waitlistModal');
+            if (event.target === modal) {
+                closeWaitlistModal();
+            }
+        }
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeWaitlistModal();
+            }
+        });
+
         // Simple countdown timer
         function updateCountdown() {
             const targetDate = new Date('September 1, 2025 00:00:00').getTime();
@@ -656,13 +896,18 @@
         // Smooth scrolling for navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                const href = this.getAttribute('href');
+                
+                // Only handle valid anchors (not just "#")
+                if (href && href !== '#' && href.length > 1) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
                 }
             });
         });
