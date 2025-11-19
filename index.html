@@ -3,30 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PrivacyPal - AI Without Compromise | Privacy-Preserving AI Solutions</title>
-    <meta name="description" content="Experience the full power of generative AI while maintaining complete data sovereignty and privacy. PrivacyPal transforms enterprise AI with uncompromised security.">
-    <meta name="keywords" content="AI privacy, enterprise AI, data sovereignty, privacy-preserving AI, secure AI, generative AI, data protection">
-    <meta name="author" content="PrivacyPal">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://privacypal.ai/">
-    <meta property="og:title" content="PrivacyPal - AI Without Compromise">
-    <meta property="og:description" content="Experience the full power of generative AI while maintaining complete data sovereignty and privacy.">
-    <meta property="og:image" content="https://privacypal.ai/pp-logo.png">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://privacypal.ai/">
-    <meta property="twitter:title" content="PrivacyPal - AI Without Compromise">
-    <meta property="twitter:description" content="Experience the full power of generative AI while maintaining complete data sovereignty and privacy.">
-    <meta property="twitter:image" content="https://privacypal.ai/pp-logo.png">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://privacypal.ai/">
-    
-    <!-- Favicon -->
+    <title>PrivacyPal - Your Private AI Companion | Launch January 2026</title>
+    <meta name="description" content="Use ChatGPT, Claude, and any AI tool without exposing your sensitive data. PrivacyPal is a simple browser extension that keeps your private information private.">
     <link rel="icon" type="image/png" href="pp-logo.png">
+    
     <style>
         * {
             margin: 0;
@@ -34,32 +14,48 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --navy: #172446;
+            --primary-blue: #4c49ff;
+            --cyan: #36c0de;
+            --light-gray: #a8acbd;
+            --dark: #191919;
+            --white: #ffffff;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #f8f6ff 0%, #f0ebff 25%, #e8deff 50%, #e0d1ff 75%, #d8c4ff 100%);
-            color: #2d1b4e;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', 'Helvetica Neue', sans-serif;
+            color: var(--dark);
+            background: var(--white);
+            line-height: 1.6;
             overflow-x: hidden;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header */
-        header {
+        /* Navigation */
+        nav {
             position: fixed;
             top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+            left: 0;
+            right: 0;
             z-index: 1000;
-            padding: 15px 0;
-            border-bottom: 1px solid rgba(139, 102, 192, 0.2);
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(76, 73, 255, 0.1);
+            transition: all 0.3s ease;
         }
 
-        .header-content {
+        nav.scrolled {
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -68,52 +64,58 @@
         .logo {
             display: flex;
             align-items: center;
-            justify-content: center;
+            gap: 12px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark);
+            text-decoration: none;
         }
 
         .logo img {
             height: 40px;
             width: auto;
-            object-fit: contain;
         }
 
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 40px;
+            align-items: center;
         }
 
         .nav-links a {
-            color: #2d1b4e;
+            color: var(--dark);
             text-decoration: none;
             font-weight: 500;
-            transition: all 0.3s ease;
+            transition: color 0.3s ease;
             position: relative;
         }
 
         .nav-links a:hover {
-            color: #8b66c0;
+            color: var(--primary-blue);
         }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background: linear-gradient(135deg, #c494ff, #8b66c0);
-            transition: width 0.3s ease;
+        .cta-nav-button {
+            background: linear-gradient(135deg, #4c49ff, #172446);
+            color: white !important;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .nav-links a:hover::after {
-            width: 100%;
+        .cta-nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(76, 73, 255, 0.3);
         }
 
-        /* Hero Section */
+        /* Hero Section - Consumer Focused */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+            padding: 120px 40px 80px;
             position: relative;
             overflow: hidden;
         }
@@ -121,270 +123,618 @@
         .hero::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(ellipse at center, rgba(139, 102, 192, 0.3) 0%, transparent 70%);
-            z-index: 1;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(76, 73, 255, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
         }
 
         .hero-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
+            animation: fadeInLeft 0.8s ease-out;
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: rgba(76, 73, 255, 0.1);
+            border: 1px solid rgba(76, 73, 255, 0.2);
+            border-radius: 50px;
+            margin-bottom: 30px;
+            font-weight: 600;
+            color: var(--primary-blue);
+            font-size: 0.95rem;
         }
 
         .hero h1 {
-            font-size: clamp(3rem, 8vw, 6rem);
+            font-size: clamp(2.5rem, 6vw, 5rem);
             font-weight: 900;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #2d1b4e, #8b66c0, #c494ff);
+            line-height: 1.1;
+            margin-bottom: 25px;
+            color: var(--dark);
+        }
+
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, #4c49ff, #36c0de);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            line-height: 1.1;
-            animation: fadeInUp 1s ease-out;
         }
 
-        .hero .subtitle {
-            font-size: clamp(1.2rem, 3vw, 2rem);
-            margin-bottom: 30px;
-            color: #4a3674;
-            font-weight: 400;
-            animation: fadeInUp 1s ease-out 0.2s both;
+        .hero p {
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            color: #666;
+            margin-bottom: 40px;
+            line-height: 1.7;
         }
 
-        .hero .tagline {
-            font-size: clamp(1rem, 2vw, 1.5rem);
-            margin-bottom: 50px;
-            color: #6b4c9a;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            animation: fadeInUp 1s ease-out 0.4s both;
-        }
-
-        .cta-container {
+        .hero-cta-group {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-            animation: fadeInUp 1s ease-out 0.6s both;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
         }
 
-        .cta-button {
-            background: linear-gradient(135deg, #8b66c0, #c494ff);
-            color: white;
+        .hero-cta {
             padding: 18px 40px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            border-radius: 50px;
             text-decoration: none;
-            display: inline-block;
-            position: relative;
-            overflow: hidden;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.6s;
+        .hero-cta-primary {
+            background: linear-gradient(135deg, #4c49ff, #172446);
+            color: white;
+            box-shadow: 0 10px 40px rgba(76, 73, 255, 0.3);
         }
 
-        .cta-button:hover::before {
-            left: 100%;
-        }
-
-        .cta-button:hover {
+        .hero-cta-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(139, 102, 192, 0.4);
+            box-shadow: 0 15px 50px rgba(76, 73, 255, 0.4);
         }
 
-        .early-access {
+        .hero-cta-secondary {
+            background: white;
+            color: var(--navy);
+            border: 2px solid var(--navy);
+        }
+
+        .hero-cta-secondary:hover {
+            background: var(--navy);
+            color: white;
+        }
+
+        .trust-indicators {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            margin-top: 20px;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .trust-item::before {
+            content: '✓';
+            color: #4c49ff;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Hero Visual - Browser Extension Mock */
+        .hero-visual {
+            position: relative;
+            animation: fadeInRight 0.8s ease-out;
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .browser-mockup {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 80px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            position: relative;
+            transform: perspective(1000px) rotateY(-5deg);
+            transition: transform 0.3s ease;
+        }
+
+        .browser-mockup:hover {
+            transform: perspective(1000px) rotateY(0deg);
+        }
+
+        .browser-header {
+            background: #f0f0f0;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .browser-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ff5f57;
+        }
+
+        .browser-dot:nth-child(2) {
+            background: #ffbd2e;
+        }
+
+        .browser-dot:nth-child(3) {
+            background: #28ca42;
+        }
+
+        .browser-url {
+            flex: 1;
+            background: white;
+            padding: 8px 15px;
+            border-radius: 8px;
+            margin-left: 10px;
+            font-size: 0.85rem;
+            color: #666;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .lock-icon {
+            color: #4c49ff;
+            font-weight: bold;
+        }
+
+        .browser-content {
+            padding: 30px;
+            background: #fafafa;
+            min-height: 400px;
+            position: relative;
+        }
+
+        .chat-interface {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .chat-message {
+            background: #f5f5f5;
+            padding: 15px 20px;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .chat-message strong {
+            color: var(--primary-blue);
+        }
+
+        .privacy-shield {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #4c49ff, #36c0de);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            box-shadow: 0 10px 30px rgba(76, 73, 255, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 10px 30px rgba(76, 73, 255, 0.3);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 15px 40px rgba(76, 73, 255, 0.5);
+            }
+        }
+
+        /* How It Works - Visual Steps */
+        .how-it-works {
+            padding: 120px 40px;
+            background: white;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(76, 73, 255, 0.1);
+            border-radius: 50px;
+            color: var(--primary-blue);
+            font-weight: 600;
             font-size: 0.9rem;
-            color: #6b4c9a;
+            margin-bottom: 20px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        /* Floating particles */
-        .particle {
-            position: absolute;
-            background: rgba(139, 102, 192, 0.6);
-            border-radius: 50%;
-            pointer-events: none;
-            animation: float 6s ease-in-out infinite;
+        .section-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 20px;
+            color: var(--dark);
         }
 
-        .particle:nth-child(1) {
-            width: 10px;
-            height: 10px;
-            top: 20%;
-            left: 10%;
-            animation-delay: 0s;
+        .section-subtitle {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
         }
 
-        .particle:nth-child(2) {
-            width: 6px;
-            height: 6px;
-            top: 60%;
-            left: 85%;
-            animation-delay: 2s;
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 60px;
         }
 
-        .particle:nth-child(3) {
-            width: 8px;
-            height: 8px;
-            top: 80%;
-            left: 20%;
-            animation-delay: 4s;
-        }
-
-        /* Revolution Section */
-        .revolution {
-            padding: 100px 0;
+        .step-card {
+            background: #f8f9ff;
+            padding: 40px;
+            border-radius: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
             position: relative;
         }
 
-        .revolution-grid {
+        .step-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(76, 73, 255, 0.15);
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #4c49ff, #36c0de);
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+        }
+
+        .step-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .step-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .step-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* Works With Section - AI Tools */
+        .works-with {
+            padding: 120px 40px;
+            background: linear-gradient(180deg, #f8f9ff 0%, #ffffff 100%);
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .tool-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-blue);
+            box-shadow: 0 20px 60px rgba(76, 73, 255, 0.15);
+        }
+
+        .tool-logo {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            filter: grayscale(100%);
+            transition: filter 0.3s ease;
+        }
+
+        .tool-card:hover .tool-logo {
+            filter: grayscale(0%);
+        }
+
+        .tool-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        .tool-status {
+            display: inline-block;
+            padding: 5px 15px;
+            background: rgba(76, 73, 255, 0.1);
+            color: var(--primary-blue);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Features - Icon Based */
+        .features {
+            padding: 120px 40px;
+            background: white;
+        }
+
+        .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 40px;
             margin-top: 60px;
         }
 
-        .revolution-card {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(139, 102, 192, 0.2);
-            border-radius: 20px;
+        .feature-card {
+            text-align: center;
             padding: 40px;
-            text-align: center;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
         }
 
-        .revolution-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(135deg, #8b66c0, #c494ff);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
-
-        .revolution-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .revolution-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(139, 102, 192, 0.2);
-        }
-
-        .revolution-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #8b66c0, #c494ff);
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-        }
-
-        .revolution-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: #8b66c0;
-        }
-
-        .revolution-card p {
-            color: #4a3674;
-            line-height: 1.6;
-        }
-
-        /* Coming Soon Section */
-        .coming-soon {
-            padding: 100px 0;
-            text-align: center;
-            background: rgba(255, 255, 255, 0.5);
-        }
-
-        .countdown {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin: 40px 0;
-            flex-wrap: wrap;
-        }
-
-        .countdown-item {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 20px;
-            min-width: 100px;
-            border: 1px solid rgba(139, 102, 192, 0.2);
-        }
-
-        .countdown-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #8b66c0;
+        .feature-icon {
+            font-size: 4rem;
+            margin-bottom: 25px;
             display: block;
         }
 
-        .countdown-label {
-            font-size: 0.9rem;
-            color: #6b4c9a;
+        .feature-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        /* Pricing - Simple Consumer */
+        .pricing {
+            padding: 120px 40px;
+            background: linear-gradient(180deg, #f8f9ff 0%, #ffffff 100%);
+        }
+
+        .pricing-container {
+            max-width: 900px;
+            margin: 60px auto 0;
+        }
+
+        .price-card {
+            background: white;
+            border-radius: 30px;
+            padding: 60px;
+            box-shadow: 0 20px 80px rgba(0, 0, 0, 0.08);
+            border: 2px solid var(--primary-blue);
+            text-align: center;
+        }
+
+        .price-badge {
+            display: inline-block;
+            padding: 10px 25px;
+            background: linear-gradient(135deg, #4c49ff, #36c0de);
+            color: white;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 30px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
+        .price-amount {
+            font-size: 5rem;
+            font-weight: 900;
+            color: var(--primary-blue);
+            line-height: 1;
+            margin-bottom: 15px;
+        }
+
+        .price-amount span {
+            font-size: 2rem;
+        }
+
+        .price-period {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .price-save {
+            color: #36c0de;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 40px;
+        }
+
+        .price-features {
+            text-align: left;
+            max-width: 500px;
+            margin: 0 auto 40px;
+        }
+
+        .price-feature {
+            padding: 15px 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .price-feature::before {
+            content: '✓';
+            color: var(--primary-blue);
+            font-weight: bold;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .price-cta {
+            background: linear-gradient(135deg, #4c49ff, #172446);
+            color: white;
+            padding: 20px 60px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .price-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(76, 73, 255, 0.4);
+        }
+
+        /* CTA Section */
+        .final-cta {
+            padding: 120px 40px;
+            background: linear-gradient(135deg, #4c49ff, #172446);
+            color: white;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 25px;
+        }
+
+        .final-cta p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .final-cta-button {
+            background: white;
+            color: var(--primary-blue);
+            padding: 20px 60px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .final-cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(255, 255, 255, 0.3);
+        }
+
         /* Footer */
         footer {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 40px 0;
-            border-top: 1px solid rgba(139, 102, 192, 0.2);
+            background: #1a1a1a;
+            color: white;
+            padding: 80px 40px 40px;
         }
 
         .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
         }
 
-        .footer-links {
-            display: flex;
-            gap: 30px;
-            flex-wrap: wrap;
+        .footer-brand h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
         }
 
-        .footer-links a {
-            color: #6b4c9a;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: #8b66c0;
+        .footer-brand p {
+            color: #999;
+            line-height: 1.8;
+            margin-bottom: 25px;
         }
 
         .social-links {
@@ -393,99 +743,58 @@
         }
 
         .social-links a {
-            width: 40px;
-            height: 40px;
-            background: rgba(139, 102, 192, 0.1);
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #8b66c0;
+            color: white;
             text-decoration: none;
+            font-size: 1.2rem;
             transition: all 0.3s ease;
         }
 
         .social-links a:hover {
-            background: linear-gradient(135deg, #8b66c0, #c494ff);
-            transform: scale(1.1);
+            background: #4c49ff;
+            transform: translateY(-3px);
         }
 
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .footer-links h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            font-weight: 700;
         }
 
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0px) rotate(0deg);
-                opacity: 0.7;
-            }
-            50% {
-                transform: translateY(-20px) rotate(180deg);
-                opacity: 1;
-            }
+        .footer-links ul {
+            list-style: none;
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hero {
-                padding: 120px 0 50px;
-            }
-            
-            .countdown {
-                gap: 15px;
-            }
-            
-            .countdown-item {
-                min-width: 80px;
-                padding: 15px;
-            }
-            
-            .footer-content {
-                flex-direction: column;
-                text-align: center;
-            }
+        .footer-links li {
+            margin-bottom: 12px;
         }
 
-        /* Glowing text effect */
-        .glow {
-            text-shadow: 0 0 10px rgba(196, 148, 255, 0.5),
-                         0 0 20px rgba(196, 148, 255, 0.3),
-                         0 0 30px rgba(196, 148, 255, 0.2);
+        .footer-links a {
+            color: #999;
+            text-decoration: none;
+            transition: color 0.3s ease;
         }
 
-        .section-title {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 900;
-            text-align: center;
-            margin-bottom: 30px;
-            background: linear-gradient(135deg, #2d1b4e, #8b66c0);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .footer-links a:hover {
+            color: white;
         }
 
-        .section-subtitle {
-            font-size: clamp(1rem, 2vw, 1.3rem);
-            text-align: center;
-            color: #4a3674;
-            max-width: 800px;
+        .footer-bottom {
+            max-width: 1400px;
             margin: 0 auto;
-            line-height: 1.6;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: #999;
         }
 
-        /* Modal Styles */
+        /* Modal */
         .modal {
             display: none;
             position: fixed;
@@ -494,9 +803,8 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background: rgba(45, 27, 78, 0.8);
-            backdrop-filter: blur(5px);
-            animation: fadeIn 0.3s ease-out;
+            background: rgba(26, 26, 26, 0.9);
+            backdrop-filter: blur(10px);
         }
 
         .modal.show {
@@ -506,32 +814,30 @@
         }
 
         .modal-content {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            border-radius: 25px;
-            border: 1px solid rgba(139, 102, 192, 0.3);
+            background: white;
+            border-radius: 30px;
             width: 90%;
             max-width: 700px;
             height: 85vh;
             max-height: 900px;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 25px 50px rgba(139, 102, 192, 0.3);
+            box-shadow: 0 25px 100px rgba(0, 0, 0, 0.5);
             animation: modalSlideIn 0.4s ease-out;
             display: flex;
             flex-direction: column;
         }
 
         .modal-header {
-            padding: 30px 40px 20px;
-            border-bottom: 1px solid rgba(139, 102, 192, 0.2);
+            padding: 40px 40px 30px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
             position: relative;
         }
 
         .modal-title {
-            font-size: 2rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #2d1b4e, #8b66c0);
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #191919, #4c49ff);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -540,23 +846,23 @@
         }
 
         .modal-subtitle {
-            color: #6b4c9a;
+            color: #666;
             text-align: center;
-            margin: 10px 0 0;
-            font-size: 1.1rem;
+            margin: 15px 0 0;
+            font-size: 1.2rem;
         }
 
         .modal-close {
             position: absolute;
-            top: 20px;
+            top: 25px;
             right: 25px;
             background: none;
             border: none;
-            font-size: 2rem;
-            color: #8b66c0;
+            font-size: 2.5rem;
+            color: #999;
             cursor: pointer;
-            width: 40px;
-            height: 40px;
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -565,8 +871,8 @@
         }
 
         .modal-close:hover {
-            background: rgba(139, 102, 192, 0.1);
-            transform: scale(1.1);
+            background: rgba(0, 0, 0, 0.05);
+            color: var(--dark);
         }
 
         .modal-body {
@@ -586,32 +892,28 @@
 
         .modal-loading {
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             height: 100%;
-            color: #8b66c0;
+            color: #666;
             font-size: 1.2rem;
         }
 
         .loading-spinner {
-            width: 40px;
-            height: 40px;
-            border: 3px solid rgba(139, 102, 192, 0.3);
-            border-top: 3px solid #8b66c0;
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(76, 73, 255, 0.2);
+            border-top: 4px solid #4c49ff;
             border-radius: 50%;
             animation: spin 1s linear infinite;
-            margin-right: 15px;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            margin-bottom: 20px;
         }
 
         @keyframes modalSlideIn {
             from {
                 opacity: 0;
-                transform: scale(0.8) translateY(50px);
+                transform: scale(0.9) translateY(50px);
             }
             to {
                 opacity: 1;
@@ -624,169 +926,422 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* Responsive modal */
+        /* Scroll Animations */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+        }
+
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content {
+                order: 1;
+            }
+
+            .hero-visual {
+                order: 2;
+            }
+
+            .hero-cta-group {
+                justify-content: center;
+            }
+
+            .trust-indicators {
+                justify-content: center;
+            }
+
+            .browser-mockup {
+                transform: none;
+            }
+
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
         @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 100px 20px 60px;
+            }
+
+            .section-header {
+                margin-bottom: 50px;
+            }
+
+            .tools-grid,
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
             .modal-content {
                 width: 95%;
-                height: 85vh;
-                margin: 20px;
+                height: 90vh;
             }
-            
-            .modal-header {
-                padding: 20px 25px 15px;
+
+            .price-card {
+                padding: 40px 25px;
             }
-            
-            .modal-title {
-                font-size: 1.5rem;
-            }
-            
-            .modal-body {
-                padding: 15px;
+
+            .price-amount {
+                font-size: 3.5rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Floating Particles -->
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <img src="pp-logo.png" alt="PrivacyPal Logo">
-                </div>
-                <nav class="nav-links">
-                    <a href="#revolution">Revolution</a>
-                    <a href="#launch">Launch</a>
-                    <a href="#contact">Contact</a>
-                </nav>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="privacypal-logo.png" alt="PrivacyPal">
+            </a>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#pricing">Pricing</a>
+                <a href="enterprise.html">Enterprise</a>
+                <a href="#" class="cta-nav-button" onclick="openWaitlistModal(event)">Join Waitlist</a>
             </div>
         </div>
-    </header>
+    </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
+    <section class="hero" id="home">
+        <div class="hero-container">
             <div class="hero-content">
-                <h1 class="glow">AI WITHOUT<br>COMPROMISE</h1>
-                <div class="subtitle">Where artificial intelligence meets absolute trust</div>
-                <div class="tagline">
-                    The breakthrough that solves AI's greatest challenge. Experience the full power of 
-                    generative AI while maintaining complete data sovereignty and privacy.
+                <div class="hero-badge">
+                    🚀 Launching January 2026
                 </div>
-                <div class="cta-container">
-                    <a href="#" class="cta-button" onclick="openWaitlistModal()">Join the Waitlist</a>
-                    <div class="early-access">Beta Access Coming Soon</div>
+                <h1>
+                    Use AI.<br>
+                    <span class="highlight">Stay Private.</span><br>
+                    That's it.
+                </h1>
+                <p>
+                    PrivacyPal is a simple browser extension that protects your sensitive data when using 
+                    ChatGPT, Claude, and any AI tool. No complex setup. No learning curve. Just install and stay private.
+                </p>
+                <div class="hero-cta-group">
+                    <a href="#" class="hero-cta hero-cta-primary" onclick="openWaitlistModal(event)">
+                        Join the Waitlist
+                    </a>
+                    <a href="#how-it-works" class="hero-cta hero-cta-secondary">
+                        See How It Works
+                    </a>
+                </div>
+                <div class="trust-indicators">
+                    <div class="trust-item">One-click install</div>
+                    <div class="trust-item">Works everywhere</div>
+                    <div class="trust-item">Always private</div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="browser-mockup">
+                    <div class="browser-header">
+                        <div class="browser-dot"></div>
+                        <div class="browser-dot"></div>
+                        <div class="browser-dot"></div>
+                        <div class="browser-url">
+                            <span class="lock-icon">🔒</span>
+                            <span>chat.openai.com</span>
+                        </div>
+                    </div>
+                    <div class="browser-content">
+                        <div class="privacy-shield">
+                            🛡️ PrivacyPal Active
+                        </div>
+                        <div class="chat-interface">
+                            <div class="chat-message">
+                                <strong>You:</strong> Can you help me analyze this patient data: John Smith, DOB 03/15/1985...
+                            </div>
+                            <div class="chat-message" style="background: #e8f4ff;">
+                                <strong>PrivacyPal:</strong> ✓ Sensitive data protected<br>
+                                🔄 Data Twin created<br>
+                                ✅ Safe to send
+                            </div>
+                            <div class="chat-message">
+                                <strong>ChatGPT:</strong> I'll help you analyze this patient data...
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Revolution Section -->
-    <section class="revolution" id="revolution">
+    <!-- How It Works -->
+    <section class="how-it-works scroll-reveal" id="how-it-works">
         <div class="container">
-            <h2 class="section-title">Transforming Enterprise AI</h2>
-            <p class="section-subtitle">
-                Organizations worldwide face a critical challenge: unlock AI's full potential while protecting 
-                sensitive data. Current solutions force compromises that limit AI effectiveness or expose critical information.
-            </p>
-            
-            <div class="revolution-grid">
-                <div class="revolution-card">
-                    <div class="revolution-icon">🛡️</div>
-                    <h3>Data Protection</h3>
-                    <p>Advanced privacy-preserving technology that safeguards personal, corporate, and intellectual property data without limiting AI capabilities.</p>
+            <div class="section-header">
+                <div class="section-badge">How It Works</div>
+                <h2 class="section-title">Three Steps to Private AI</h2>
+                <p class="section-subtitle">
+                    PrivacyPal works invisibly in the background. You use AI like normal. 
+                    We handle the privacy automatically.
+                </p>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">🔌</div>
+                    <h3>Install Extension</h3>
+                    <p>
+                        One-click install from Chrome Web Store. Takes 10 seconds. 
+                        No configuration needed.
+                    </p>
                 </div>
-                
-                <div class="revolution-card">
-                    <div class="revolution-icon">⚡</div>
-                    <h3>Full AI Performance</h3>
-                    <p>Experience 100% AI accuracy and functionality across all generative AI platforms while maintaining complete data sovereignty.</p>
+
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">💬</div>
+                    <h3>Use AI Normally</h3>
+                    <p>
+                        Go to ChatGPT, Claude, or any AI tool. Type your questions like you 
+                        always do. PrivacyPal works in the background.
+                    </p>
                 </div>
-                
-                <div class="revolution-card">
-                    <div class="revolution-icon">🔗</div>
-                    <h3>Universal Integration</h3>
-                    <p>Seamlessly works with any foundational model, cloud AI stack, or development platform through our transparent data layer.</p>
-                </div>
-                
-                <div class="revolution-card">
-                    <div class="revolution-icon">👥</div>
-                    <h3>Knowledge Workers</h3>
-                    <p>Designed for professionals in legal, financial, healthcare, and technology sectors who handle sensitive customer and business data.</p>
-                </div>
-                
-                <div class="revolution-card">
-                    <div class="revolution-icon">📋</div>
-                    <h3>Compliance Ready</h3>
-                    <p>Built for organizations pursuing SOC, ISO, GDPR, and other regulatory compliance while leveraging generative AI tools.</p>
-                </div>
-                
-                <div class="revolution-card">
-                    <div class="revolution-icon">🌐</div>
-                    <h3>Enterprise Scale</h3>
-                    <p>Scalable solution for individual users to enterprise deployments, with both SaaS and self-hosted options available.</p>
+
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">🛡️</div>
+                    <h3>Stay Protected</h3>
+                    <p>
+                        PrivacyPal automatically detects sensitive data, creates Data Twins, 
+                        and keeps your information private. Always.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Coming Soon Section -->
-    <section class="coming-soon" id="launch">
+    <!-- Works With -->
+    <section class="works-with scroll-reveal">
         <div class="container">
-            <h2 class="section-title">Launch January 2026</h2>
-            <p class="section-subtitle">
-                PrivacyPal's enterprise solution is launching this fall. Join our beta program to be among the first 
-                organizations to experience secure, unrestricted AI collaboration.
-            </p>
-            
-            <div class="countdown">
-                <div class="countdown-item">
-                    <span class="countdown-number" id="months">7</span>
-                    <span class="countdown-label">Months</span>
+            <div class="section-header">
+                <div class="section-badge">Works Everywhere</div>
+                <h2 class="section-title">Your AI Tools. Now Private.</h2>
+                <p class="section-subtitle">
+                    PrivacyPal meets you where you are. Use any AI tool with complete confidence.
+                </p>
+            </div>
+
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-logo">💬</div>
+                    <div class="tool-name">ChatGPT</div>
+                    <div class="tool-status">✓ Supported</div>
                 </div>
-                <div class="countdown-item">
-                    <span class="countdown-number" id="days">28</span>
-                    <span class="countdown-label">Days</span>
+
+                <div class="tool-card">
+                    <div class="tool-logo">🤖</div>
+                    <div class="tool-name">Claude</div>
+                    <div class="tool-status">✓ Supported</div>
                 </div>
-                <div class="countdown-item">
-                    <span class="countdown-number" id="hours">14</span>
-                    <span class="countdown-label">Hours</span>
+
+                <div class="tool-card">
+                    <div class="tool-logo">✨</div>
+                    <div class="tool-name">Gemini</div>
+                    <div class="tool-status">Coming Soon</div>
                 </div>
-                <div class="countdown-item">
-                    <span class="countdown-number" id="minutes">32</span>
-                    <span class="countdown-label">Minutes</span>
+
+                <div class="tool-card">
+                    <div class="tool-logo">🎯</div>
+                    <div class="tool-name">Any AI Tool</div>
+                    <div class="tool-status">Universal Support</div>
                 </div>
             </div>
-            
-            <div style="margin-top: 40px;">
-                <a href="#" class="cta-button" onclick="openWaitlistModal()">Request Beta Access</a>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features scroll-reveal">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Features</div>
+                <h2 class="section-title">Simple. Powerful. Private.</h2>
+                <p class="section-subtitle">
+                    Everything you need to use AI confidently. Nothing you don't.
+                </p>
             </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Instant Protection</h3>
+                    <p>
+                        PrivacyPal works in real-time. Your sensitive data is protected the 
+                        moment you type it. No delays, no waiting.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Smart Detection</h3>
+                    <p>
+                        Automatically identifies names, emails, financial data, health info, 
+                        and more. You don't have to think about it.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Data Twins</h3>
+                    <p>
+                        Your sensitive data is swapped with synthetic Data Twins. Get accurate 
+                        AI responses without exposing real information.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>Works Everywhere</h3>
+                    <p>
+                        One extension protects you across ChatGPT, Claude, and any AI tool 
+                        you use in your browser.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔐</div>
+                    <h3>Always Encrypted</h3>
+                    <p>
+                        Your data stays encrypted, in your hands, and always private. 
+                        Even we can't see it.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Zero Learning Curve</h3>
+                    <p>
+                        Install once, forget forever. PrivacyPal works silently in the 
+                        background. Use AI like you always have.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing scroll-reveal" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Pricing</div>
+                <h2 class="section-title">One Simple Price</h2>
+                <p class="section-subtitle">
+                    No hidden fees. No enterprise sales calls. Just honest, straightforward pricing.
+                </p>
+            </div>
+
+            <div class="pricing-container">
+                <div class="price-card">
+                    <div class="price-badge">Launch Offer</div>
+                    <div class="price-amount">$8<span>/mo</span></div>
+                    <div class="price-period">Billed monthly</div>
+                    <div class="price-save">or $80/year (save 17%)</div>
+
+                    <div class="price-features">
+                        <div class="price-feature">1,000 Data Twins per month</div>
+                        <div class="price-feature">Works with ChatGPT & Claude</div>
+                        <div class="price-feature">Automatic sensitive data detection</div>
+                        <div class="price-feature">Real-time protection</div>
+                        <div class="price-feature">Browser extension</div>
+                        <div class="price-feature">Unlimited AI queries</div>
+                        <div class="price-feature">Priority support</div>
+                    </div>
+
+                    <a href="#" class="price-cta" onclick="openWaitlistModal(event)">Join Waitlist</a>
+
+                    <p style="margin-top: 30px; color: #999; font-size: 0.95rem;">
+                        Need an enterprise solution? <strong style="color: var(--primary-blue);">PrivacyPal Cloud</strong> for teams starts at $12k/year. 
+                        <a href="enterprise.html" style="color: var(--primary-blue); text-decoration: underline;">Learn about Enterprise →</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta" id="download">
+        <div class="container">
+            <h2>Ready to Use AI Without Worry?</h2>
+            <p>Join thousands of professionals who refuse to choose between AI power and data privacy.</p>
+            <a href="#" class="final-cta-button" onclick="openWaitlistModal(event)">Join the Waitlist → Launching January 2026</a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <div class="logo">
-                    <img src="pp-logo.png" alt="PrivacyPal Logo">
-                </div>
-                
-                <div class="footer-links">
-                    <a href="mailto:hi@privacypal.ai">hi@privacypal.ai</a>
-                    <a href="https://privacypal.ai">privacypal.ai</a>
-                </div>
-                
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>PrivacyPal</h3>
+                <p>
+                    The simple browser extension that lets you use ChatGPT, Claude, and any AI tool 
+                    without exposing your sensitive data.
+                </p>
                 <div class="social-links">
-                    <a href="https://x.com/touchbrick" title="Twitter">𝕏</a>
-                    <a href="https://www.linkedin.com/company/touchbrick/" title="LinkedIn">in</a>
+                    <a href="https://x.com/privacypal" title="X (Twitter)">𝕏</a>
+                    <a href="https://www.linkedin.com/company/privacypal/" title="LinkedIn">in</a>
                 </div>
             </div>
+
+            <div class="footer-links">
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#download">Download</a></li>
+                    <li><a href="#">Chrome Extension</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="mailto:hi@privacypal.ai">Contact</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Security</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 PrivacyPal. All rights reserved. | <a href="mailto:hi@privacypal.ai" style="color: #4c49ff;">hi@privacypal.ai</a></p>
         </div>
     </footer>
 
@@ -794,8 +1349,8 @@
     <div id="waitlistModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 class="modal-title">Join the Revolution</h2>
-                <p class="modal-subtitle">Be among the first to experience AI without compromise</p>
+                <h2 class="modal-title">Join the Waitlist</h2>
+                <p class="modal-subtitle">Be first to experience truly private AI</p>
                 <button class="modal-close" onclick="closeWaitlistModal()">&times;</button>
             </div>
             <div class="modal-body">
@@ -820,42 +1375,26 @@
     </div>
 
     <script>
-        // Google Forms URL - Using the exact embedded URL from Google
-        const GOOGLE_FORMS_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSdVifw1avvSktOoKS8zpmvA0S1vmQfMeopElMvVPPXGQwHk2A/viewform?embedded=true';
-        
         // Modal functions
-        function openWaitlistModal() {
+        function openWaitlistModal(e) {
+            if (e) e.preventDefault();
             const modal = document.getElementById('waitlistModal');
             const iframe = document.getElementById('waitlistForm');
             const loading = document.getElementById('modalLoading');
             
-            // Show modal
             modal.classList.add('show');
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            document.body.style.overflow = 'hidden';
             
-            // Show loading initially
             loading.style.display = 'flex';
             iframe.style.display = 'none';
             
-            // Try to detect if iframe loads successfully
             let iframeLoaded = false;
             
-            // Set up iframe load detection
             iframe.onload = function() {
-                console.log('Iframe loaded');
                 iframeLoaded = true;
                 hideModalLoading();
             };
             
-            // Fallback timeout - if iframe doesn't load in 5 seconds, show it anyway
-            setTimeout(() => {
-                if (!iframeLoaded) {
-                    console.log('Iframe timeout - showing anyway');
-                    hideModalLoading();
-                }
-            }, 5000);
-            
-            // Also try to force show after 3 seconds
             setTimeout(() => {
                 if (!iframeLoaded) {
                     hideModalLoading();
@@ -866,7 +1405,7 @@
         function closeWaitlistModal() {
             const modal = document.getElementById('waitlistModal');
             modal.classList.remove('show');
-            document.body.style.overflow = ''; // Restore scrolling
+            document.body.style.overflow = '';
         }
         
         function hideModalLoading() {
@@ -876,7 +1415,7 @@
             iframe.style.display = 'block';
         }
         
-        // Close modal when clicking outside
+        // Close modal on click outside
         window.onclick = function(event) {
             const modal = document.getElementById('waitlistModal');
             if (event.target === modal) {
@@ -891,46 +1430,39 @@
             }
         });
 
-        // Set up iframe loading detection when page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            const iframe = document.getElementById('waitlistForm');
-            
-            iframe.onload = function() {
-                console.log('Google Form iframe loaded successfully');
-            };
-            
-            iframe.onerror = function() {
-                console.error('Failed to load Google Form iframe');
-            };
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
         });
 
-        // Simple countdown timer
-        function updateCountdown() {
-            const targetDate = new Date('January 20, 2026 00:00:00').getTime();
-            const now = new Date().getTime();
-            const timeLeft = targetDate - now;
+        // Scroll reveal animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
 
-            const months = Math.floor(timeLeft / (1000 * 60 * 60 * 24 * 30));
-            const days = Math.floor((timeLeft % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, observerOptions);
 
-            document.getElementById('months').textContent = months;
-            document.getElementById('days').textContent = days;
-            document.getElementById('hours').textContent = hours;
-            document.getElementById('minutes').textContent = minutes;
-        }
+        document.querySelectorAll('.scroll-reveal').forEach(element => {
+            observer.observe(element);
+        });
 
-        // Update countdown every minute
-        updateCountdown();
-        setInterval(updateCountdown, 60000);
-
-        // Smooth scrolling for navigation
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 const href = this.getAttribute('href');
                 
-                // Only handle valid anchors (not just "#")
                 if (href && href !== '#' && href.length > 1) {
                     e.preventDefault();
                     const target = document.querySelector(href);
@@ -942,34 +1474,6 @@
                     }
                 }
             });
-        });
-
-        // Add floating animation to particles
-        document.querySelectorAll('.particle').forEach((particle, index) => {
-            particle.style.animationDelay = `${index * 2}s`;
-        });
-
-        // Add scroll-triggered animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe revolution cards
-        document.querySelectorAll('.revolution-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(50px)';
-            card.style.transition = 'all 0.6s ease';
-            observer.observe(card);
         });
     </script>
 </body>
