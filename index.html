@@ -1022,7 +1022,6 @@
                 <a href="#home">Home</a>
                 <a href="#how-it-works">How It Works</a>
                 <a href="#pricing">Pricing</a>
-                <a href="enterprise.html">Enterprise</a>
                 <a href="#" class="cta-nav-button" onclick="openWaitlistModal(event)">Join Waitlist</a>
             </div>
         </div>
@@ -1252,15 +1251,16 @@
         <div class="container">
             <div class="section-header">
                 <div class="section-badge">Pricing</div>
-                <h2 class="section-title">One Simple Price</h2>
+                <h2 class="section-title">Choose Your Plan</h2>
                 <p class="section-subtitle">
-                    No hidden fees. No enterprise sales calls. Just honest, straightforward pricing.
+                    From individual users to enterprise organizations. No hidden fees, just honest pricing.
                 </p>
             </div>
 
-            <div class="pricing-container">
+            <div class="pricing-container" style="max-width: 1200px; display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 40px;">
                 <div class="price-card">
                     <div class="price-badge">Launch Offer</div>
+                    <h3 style="font-size: 2rem; font-weight: 800; margin-bottom: 15px; color: var(--dark);">PrivacyPal AI</h3>
                     <div class="price-amount">$8<span>/mo</span></div>
                     <div class="price-period">Billed monthly</div>
                     <div class="price-save">or $80/year (save 17%)</div>
@@ -1272,15 +1272,30 @@
                         <div class="price-feature">Real-time protection</div>
                         <div class="price-feature">Browser extension</div>
                         <div class="price-feature">Unlimited AI queries</div>
-                        <div class="price-feature">Priority support</div>
+                        <div class="price-feature">Email support</div>
                     </div>
 
                     <a href="#" class="price-cta" onclick="openWaitlistModal(event)">Join Waitlist</a>
+                </div>
 
-                    <p style="margin-top: 30px; color: #999; font-size: 0.95rem;">
-                        Need an enterprise solution? <strong style="color: var(--primary-blue);">PrivacyPal Cloud</strong> for teams starts at $12k/year. 
-                        <a href="enterprise.html" style="color: var(--primary-blue); text-decoration: underline;">Learn about Enterprise →</a>
-                    </p>
+                <div class="price-card" style="border-color: var(--primary-blue); box-shadow: 0 30px 100px rgba(76, 73, 255, 0.2);">
+                    <div class="price-badge" style="background: linear-gradient(135deg, #4c49ff, #172446);">Enterprise</div>
+                    <h3 style="font-size: 2rem; font-weight: 800; margin-bottom: 15px; color: var(--dark);">PrivacyPal Cloud</h3>
+                    <div class="price-amount" style="font-size: 3.5rem;">$12k<span style="font-size: 1.5rem;">/yr</span></div>
+                    <div class="price-period">Starting price</div>
+                    <div class="price-save">Includes 20 PrivacyPal AI licenses</div>
+
+                    <div class="price-features">
+                        <div class="price-feature">Everything in PrivacyPal AI</div>
+                        <div class="price-feature">Self-host sensitive data & Data Twins</div>
+                        <div class="price-feature">Data sovereignty & compliance</div>
+                        <div class="price-feature">Internal database scanning (DSPM)</div>
+                        <div class="price-feature">Process larger data volumes</div>
+                        <div class="price-feature">Additional user seats available</div>
+                        <div class="price-feature">24/7 dedicated support</div>
+                    </div>
+
+                    <a href="mailto:enterprise@privacypal.ai" class="price-cta">Contact Sales</a>
                 </div>
             </div>
         </div>
