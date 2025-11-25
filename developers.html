@@ -869,10 +869,10 @@
 
                 <div class="feature-card">
                     <div class="feature-icon">🏢</div>
-                    <h3>Multi-Tenant Ready</h3>
+                    <h3>Multi-Tenant Data for AI</h3>
                     <p>
-                        Built-in tenant isolation ensures customer data never crosses boundaries. 
-                        Perfect for SaaS applications serving multiple clients.
+                        Safely aggregate customer data for model training and analytics. Tell your 
+                        customers "We don't train on your data" - because you're using Data Twins instead.
                     </p>
                 </div>
 
@@ -1004,40 +1004,41 @@
                 <!-- Example 3: Multi-Tenant -->
                 <div class="example-card">
                     <div class="example-header">
-                        <h3>Multi-Tenant Data Isolation</h3>
-                        <p>Ensure customer data never crosses tenant boundaries in your SaaS application</p>
+                        <h3>Train AI on Customer Data Safely</h3>
+                        <p>Aggregate multi-tenant customer data for model training without exposing sensitive information</p>
                     </div>
                     <div class="example-code">
                         <div class="code-header">
                             <div class="code-dot"></div>
                             <div class="code-dot"></div>
                             <div class="code-dot"></div>
-                            <div class="code-title">multi-tenant.js</div>
+                            <div class="code-title">train-on-customer-data.js</div>
                         </div>
                         <div class="code-content">
 <pre><span class="code-keyword">import</span> { <span class="code-function">PrivacyPalClient</span> } <span class="code-keyword">from</span> <span class="code-string">'privacypal-sdk'</span>;
 
-<span class="code-keyword">class</span> <span class="code-function">TenantDataHandler</span> {
-  <span class="code-keyword">constructor</span>(<span class="code-property">tenantId</span>) {
-    <span class="code-keyword">this</span>.<span class="code-property">client</span> = <span class="code-keyword">new</span> <span class="code-function">PrivacyPalClient</span>({
-      <span class="code-property">apiKey</span>: process.<span class="code-property">env</span>.<span class="code-property">PRIVACYPAL_API_KEY</span>,
-      <span class="code-property">tenantId</span>: tenantId, <span class="code-comment">// Isolated namespace</span>
-      <span class="code-property">dataResidency</span>: <span class="code-string">'us-east-1'</span>
-    });
-  }
+<span class="code-keyword">const</span> <span class="code-property">privacypal</span> = <span class="code-keyword">new</span> <span class="code-function">PrivacyPalClient</span>({
+  <span class="code-property">apiKey</span>: process.<span class="code-property">env</span>.<span class="code-property">PRIVACYPAL_API_KEY</span>
+});
 
-  <span class="code-keyword">async</span> <span class="code-function">processCustomerData</span>(<span class="code-property">data</span>) {
-    <span class="code-comment">// Each tenant gets isolated Data Twins</span>
-    <span class="code-keyword">const</span> <span class="code-property">stream</span> = <span class="code-keyword">await</span> <span class="code-keyword">this</span>.<span class="code-property">client</span>.<span class="code-function">createStream</span>(data);
-    
-    <span class="code-comment">// Process with tenant-specific AI models</span>
-    <span class="code-keyword">return</span> <span class="code-keyword">await</span> <span class="code-keyword">this</span>.<span class="code-function">runAIAnalysis</span>(stream.<span class="code-property">data</span>);
-  }
-}
+<span class="code-comment">// Collect data from all your customers</span>
+<span class="code-keyword">const</span> <span class="code-property">customerAData</span> = <span class="code-keyword">await</span> <span class="code-function">fetchCustomerData</span>(<span class="code-string">'customer-a'</span>);
+<span class="code-keyword">const</span> <span class="code-property">customerBData</span> = <span class="code-keyword">await</span> <span class="code-function">fetchCustomerData</span>(<span class="code-string">'customer-b'</span>);
+<span class="code-keyword">const</span> <span class="code-property">customerCData</span> = <span class="code-keyword">await</span> <span class="code-function">fetchCustomerData</span>(<span class="code-string">'customer-c'</span>);
 
-<span class="code-comment">// Each customer gets complete data isolation</span>
-<span class="code-keyword">const</span> <span class="code-property">customerA</span> = <span class="code-keyword">new</span> <span class="code-function">TenantDataHandler</span>(<span class="code-string">'customer-a'</span>);
-<span class="code-keyword">const</span> <span class="code-property">customerB</span> = <span class="code-keyword">new</span> <span class="code-function">TenantDataHandler</span>(<span class="code-string">'customer-b'</span>);
+<span class="code-comment">// Anonymize all customer data with Data Twins</span>
+<span class="code-keyword">const</span> <span class="code-property">anonymizedData</span> = <span class="code-keyword">await</span> privacypal.<span class="code-function">createStream</span>([
+  ...customerAData,
+  ...customerBData,
+  ...customerCData
+]);
+
+<span class="code-comment">// Now safely train your AI model on aggregate data</span>
+<span class="code-keyword">await</span> <span class="code-function">trainModel</span>(anonymizedData.<span class="code-property">data</span>);
+
+<span class="code-comment">// Tell your customers with confidence:</span>
+<span class="code-comment">// "We don't train AI on your real data"</span>
+<span class="code-comment">// Because you're using Data Twins! ✅</span>
 </pre>
                         </div>
                     </div>
