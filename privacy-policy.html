@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - PrivacyPal</title>
+    <meta name="description" content="PrivacyPal Privacy Policy - Learn how we collect, use, and share information when you use our website, products, and services.">
+    <link rel="icon" type="image/png" href="pp-logo.png">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #172446;
+            --primary-blue: #4c49ff;
+            --cyan: #36c0de;
+            --light-gray: #a8acbd;
+            --dark: #191919;
+            --white: #ffffff;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', 'Helvetica Neue', sans-serif;
+            color: var(--dark);
+            background: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(76, 73, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark);
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        .cta-nav-button {
+            background: linear-gradient(135deg, #4c49ff, #172446);
+            color: white !important;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cta-nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(76, 73, 255, 0.3);
+        }
+
+        /* Content */
+        .policy-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 140px 40px 80px;
+        }
+
+        .policy-header {
+            margin-bottom: 60px;
+        }
+
+        .policy-header h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .policy-date {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .policy-section {
+            margin-bottom: 50px;
+        }
+
+        .policy-section h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .policy-section h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            margin-top: 25px;
+            color: var(--dark);
+        }
+
+        .policy-section p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .policy-section ul {
+            margin-left: 30px;
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        .policy-section li {
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 80px 40px 40px;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-brand p {
+            color: #999;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: #4c49ff;
+            transform: translateY(-3px);
+        }
+
+        .footer-links h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #999;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: #999;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .policy-content {
+                padding: 120px 20px 60px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="privacypal-logo.png" alt="PrivacyPal">
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#how-it-works">How It Works</a>
+                <a href="index.html#pricing">Pricing</a>
+                <a href="developers.html">Developers</a>
+                <a href="about.html">About</a>
+                <a href="#" class="cta-nav-button" onclick="openWaitlistModal(event)">Join Waitlist</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Policy Content -->
+    <div class="policy-content">
+        <div class="policy-header">
+            <h1>Privacy Policy</h1>
+            <p class="policy-date">Last updated 12/27/2024</p>
+        </div>
+
+        <div class="policy-section">
+            <h2>Introduction</h2>
+            <p>
+                This Privacy Policy describes how PrivacyPal ("we," "our," or "us") collects, uses, and shares information when you use our website, products, and services.
+            </p>
+        </div>
+
+        <div class="policy-section">
+            <h2>Information We Collect</h2>
+            
+            <h3>Information You Provide</h3>
+            <ul>
+                <li>Contact information (name, email, phone number)</li>
+                <li>Account credentials</li>
+                <li>Payment information</li>
+                <li>Communication preferences</li>
+                <li>Any other information you choose to provide</li>
+            </ul>
+
+            <h3>Information Automatically Collected</h3>
+            <ul>
+                <li>Device information</li>
+                <li>IP address</li>
+                <li>Browser type</li>
+                <li>Operating system</li>
+                <li>Usage data</li>
+                <li>Cookies and tracking technologies</li>
+            </ul>
+        </div>
+
+        <div class="policy-section">
+            <h2>How We Use Your Information</h2>
+            <p>We use collected information to:</p>
+            <ul>
+                <li>Provide and maintain our services</li>
+                <li>Process transactions</li>
+                <li>Send marketing communications</li>
+                <li>Analyze service usage</li>
+                <li>Improve user experience</li>
+                <li>Comply with legal obligations</li>
+                <li>Contact you about products, services, and promotions</li>
+                <li>Prevent fraud and ensure security</li>
+            </ul>
+        </div>
+
+        <div class="policy-section">
+            <h2>Marketing Communications</h2>
+            <p>
+                By providing your information to PrivacyPal, you expressly consent to receive marketing, sales, and customer support communications through various channels including email, phone, and text messages. You acknowledge that such communications may include promotional content, product updates, and special offers.
+            </p>
+        </div>
+
+        <div class="policy-section">
+            <h2>Information Sharing</h2>
+            <p>We may share your information with:</p>
+            <ul>
+                <li>Service providers and business partners</li>
+                <li>Legal authorities when required by law</li>
+                <li>Affiliated companies</li>
+                <li>Third-party advertisers</li>
+                <li>Potential buyers during a business transaction</li>
+            </ul>
+        </div>
+
+        <div class="policy-section">
+            <h2>Your Rights</h2>
+            <p>You have the right to:</p>
+            <ul>
+                <li>Access your personal information</li>
+                <li>Correct inaccurate data</li>
+                <li>Request deletion of your data</li>
+                <li>Opt-out of marketing communications</li>
+                <li>Request data portability</li>
+            </ul>
+        </div>
+
+        <div class="policy-section">
+            <h2>Data Security</h2>
+            <p>
+                We implement reasonable security measures to protect your information. However, no method of transmission over the internet is 100% secure.
+            </p>
+        </div>
+
+        <div class="policy-section">
+            <h2>Cookies</h2>
+            <p>We use cookies and similar technologies to:</p>
+            <ul>
+                <li>Remember your preferences</li>
+                <li>Analyze site traffic</li>
+                <li>Personalize content</li>
+                <li>Enable certain site functionalities</li>
+            </ul>
+        </div>
+
+        <div class="policy-section">
+            <h2>Children's Privacy</h2>
+            <p>
+                Our services are not directed to children under 13. We do not knowingly collect information from children under 13.
+            </p>
+        </div>
+
+        <div class="policy-section">
+            <h2>Changes to This Policy</h2>
+            <p>
+                We may update this Privacy Policy periodically. We will notify you of material changes through our website or other communication channels.
+            </p>
+        </div>
+
+        <div class="policy-section">
+            <h2>Contact Us</h2>
+            <p>
+                For questions about this Privacy Policy, contact us at:<br>
+                <a href="mailto:info@privacypal.ai" style="color: var(--primary-blue);">info@privacypal.ai</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>PrivacyPal</h3>
+                <p>
+                    The simple browser extension that lets you use ChatGPT, Claude, and any AI tool 
+                    without exposing your sensitive data.
+                </p>
+                <div class="social-links">
+                    <a href="https://x.com/privacypalai" title="X (Twitter)">𝕏</a>
+                    <a href="https://www.linkedin.com/company/touchbrick/" title="LinkedIn">in</a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="index.html#how-it-works">How It Works</a></li>
+                    <li><a href="index.html#pricing">Pricing</a></li>
+                    <li><a href="install.html">Install</a></li>
+                    <li><a href="developers.html">Developers</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms-of-service.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 PrivacyPal. All rights reserved. | <a href="mailto:hi@privacypal.ai" style="color: #4c49ff;">hi@privacypal.ai</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        function openWaitlistModal(e) {
+            if (e) e.preventDefault();
+            alert('Please use the Join Waitlist button in the navigation.');
+        }
+    </script>
+</body>
+</html>
+
