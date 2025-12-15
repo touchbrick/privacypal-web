@@ -872,12 +872,12 @@
         <div class="hero-container">
             <div class="hero-content">
                 <h1>
-                    Build <span class="highlight">Privacy-First</span><br>
-                    AI Applications
+                    Enable <span class="highlight">Agent-to-Agent</span><br>
+                    Workflows & Transactions
                 </h1>
                 <p>
-                    Integrate PrivacyPal's streaming Data Twin technology into your applications. 
-                    Build compliant, multi-tenant AI solutions with real-time data anonymization.
+                    Build secure entry points for AI agents to interact with other agents while protecting sensitive data. 
+                    Enable agentic payments, information flow, and compliant data sharing with PrivacyPal's Data Twin technology.
                 </p>
                 <div class="platform-badges">
                     <div class="platform-badge">
@@ -920,14 +920,14 @@
   <span class="code-property">mode</span>: <span class="code-string">'streaming'</span>
 });
 
-<span class="code-comment">// Stream sensitive data with Data Twins</span>
-<span class="code-keyword">const</span> <span class="code-property">stream</span> = <span class="code-keyword">await</span> client.<span class="code-function">createStream</span>({
-  <span class="code-property">data</span>: patientRecords,
+<span class="code-comment">// Create secure entry point for agent-to-agent communication</span>
+<span class="code-keyword">const</span> <span class="code-property">agentEndpoint</span> = <span class="code-keyword">await</span> client.<span class="code-function">createAgentEndpoint</span>({
+  <span class="code-property">sensitiveData</span>: agentPayload,
   <span class="code-property">encoding</span>: <span class="code-string">'two-way'</span>
 });
 
-<span class="code-comment">// Safe for RAG pipelines, AI processing</span>
-<span class="code-keyword">await</span> <span class="code-function">processWithAI</span>(stream.<span class="code-property">anonymized</span>);
+<span class="code-comment">// Safe to share with other agents - real data stays protected</span>
+<span class="code-keyword">await</span> <span class="code-function">sendToAgent</span>(agentEndpoint.<span class="code-property">protected</span>);
 </pre>
                 </div>
             </div>
@@ -1036,9 +1036,9 @@
         <div class="container">
             <div class="section-header">
                 <div class="section-badge">SDK Features</div>
-                <h2 class="section-title">Everything You Need</h2>
+                <h2 class="section-title">Agent-to-Agent Infrastructure</h2>
                 <p class="section-subtitle">
-                    Build sophisticated AI solutions with privacy built-in from the ground up
+                    Build secure agent entry points, enable agentic payments, and control information flow between AI agents
                 </p>
             </div>
 
@@ -1051,24 +1051,25 @@
                             <line x1="12" y1="22.08" x2="12" y2="12"/>
                         </svg>
                     </div>
-                    <h3>Streaming Data Twins</h3>
+                    <h3>Agent Entry Points</h3>
                     <p>
-                        Real-time Data Twin generation for continuous data streams. Perfect for 
-                        RAG pipelines, vector databases, and AI training workflows.
+                        Create secure entry points for your agents to interact with other agents. 
+                        Control sensitive data flow while enabling agent-to-agent transactions and information sharing.
                     </p>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                            <polyline points="9 22 9 12 15 12 15 22"/>
+                            <polyline points="23 4 23 10 17 10"/>
+                            <polyline points="1 20 1 14 7 14"/>
+                            <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
                         </svg>
                     </div>
-                    <h3>Multi-Tenant Data for AI</h3>
+                    <h3>x402 Payment Integration <span style="font-size: 0.7em; background: rgba(76, 73, 255, 0.2); padding: 4px 12px; border-radius: 12px; margin-left: 10px;">Future Release</span></h3>
                     <p>
-                        Safely aggregate customer data for model training and analytics. Tell your 
-                        customers "We don't train on your data" - because you're using Data Twins instead.
+                        Coming soon: Enable agentic payments with x402 protocol. Agents will be able to request payment before 
+                        sharing sensitive data, creating win-win economies for agent-to-agent transactions.
                     </p>
                 </div>
 
@@ -1102,15 +1103,13 @@
                 <div class="feature-card">
                     <div class="feature-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <circle cx="12" cy="12" r="10"/>
-                            <circle cx="12" cy="12" r="6"/>
-                            <circle cx="12" cy="12" r="2"/>
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                         </svg>
                     </div>
-                    <h3>RAG Pipeline Integration</h3>
+                    <h3>Protected Information Flow</h3>
                     <p>
-                        Seamlessly integrate with LangChain, LlamaIndex, and popular RAG 
-                        frameworks. Keep embeddings private while maintaining accuracy.
+                        Control how sensitive data flows between agents. Your agent maintains responsibility 
+                        for data protection while enabling necessary information sharing for workflows.
                     </p>
                 </div>
 
@@ -1136,26 +1135,26 @@
     <section class="code-examples" id="examples">
         <div class="container">
             <div class="section-header">
-                <div class="section-badge">Code Examples</div>
-                <h2 class="section-title">See It In Action</h2>
+                <div class="section-badge">Use Cases</div>
+                <h2 class="section-title">Agent-to-Agent Workflows</h2>
                 <p class="section-subtitle">
-                    Real-world examples to get you started quickly
+                    Build secure agent entry points and enable compliant information flow between AI agents
                 </p>
             </div>
 
             <div class="examples-grid">
-                <!-- Example 1: Basic Streaming -->
+                <!-- Example 1: Agent Entry Point -->
                 <div class="example-card">
                     <div class="example-header">
-                        <h3>Basic Streaming with Data Twins</h3>
-                        <p>Create a simple data stream with automatic PII detection and anonymization</p>
+                        <h3>Agent Entry Point for Secure A2A Communication</h3>
+                        <p>Create a protected entry point for your agent to interact with other agents while controlling sensitive data flow</p>
                     </div>
                     <div class="example-code">
                         <div class="code-header">
                             <div class="code-dot"></div>
                             <div class="code-dot"></div>
                             <div class="code-dot"></div>
-                            <div class="code-title">basic-stream.js</div>
+                            <div class="code-title">agent-entry-point.js</div>
                         </div>
                         <div class="code-content">
 <pre><span class="code-keyword">import</span> { <span class="code-function">PrivacyPalClient</span> } <span class="code-keyword">from</span> <span class="code-string">'privacypal-sdk'</span>;
@@ -1164,98 +1163,122 @@
   <span class="code-property">apiKey</span>: process.<span class="code-property">env</span>.<span class="code-property">PRIVACYPAL_API_KEY</span>
 });
 
-<span class="code-comment">// Original sensitive data</span>
-<span class="code-keyword">const</span> <span class="code-property">records</span> = [
-  { <span class="code-property">name</span>: <span class="code-string">'John Smith'</span>, <span class="code-property">email</span>: <span class="code-string">'john@example.com'</span>, <span class="code-property">ssn</span>: <span class="code-string">'123-45-6789'</span> },
-  { <span class="code-property">name</span>: <span class="code-string">'Jane Doe'</span>, <span class="code-property">email</span>: <span class="code-string">'jane@example.com'</span>, <span class="code-property">ssn</span>: <span class="code-string">'987-65-4321'</span> }
-];
+<span class="code-comment">// Your agent receives sensitive data it's responsible for</span>
+<span class="code-keyword">const</span> <span class="code-property">agentData</span> = {
+  <span class="code-property">userId</span>: <span class="code-string">'user-123'</span>,
+  <span class="code-property">sensitiveInfo</span>: <span class="code-string">'confidential-data'</span>,
+  <span class="code-property">metadata</span>: { <span class="code-property">source</span>: <span class="code-string">'internal'</span> }
+};
 
-<span class="code-comment">// Create anonymized stream</span>
-<span class="code-keyword">const</span> <span class="code-property">stream</span> = <span class="code-keyword">await</span> client.<span class="code-function">createStream</span>(records);
+<span class="code-comment">// Create protected entry point before sharing with other agents</span>
+<span class="code-keyword">const</span> <span class="code-property">protectedEndpoint</span> = <span class="code-keyword">await</span> client.<span class="code-function">createAgentEndpoint</span>({
+  <span class="code-property">data</span>: agentData,
+  <span class="code-property">encoding</span>: <span class="code-string">'two-way'</span>,
+  <span class="code-property">accessControl</span>: { <span class="code-property">requirePayment</span>: <span class="code-keyword">true</span> }
+});
 
-<span class="code-comment">// Process with AI safely</span>
-<span class="code-keyword">await</span> <span class="code-function">sendToLLM</span>(stream.<span class="code-property">data</span>);
-<span class="code-comment">// Data Twins used instead of real data</span>
+<span class="code-comment">// Share Data Twin with other agents - real data stays protected</span>
+<span class="code-keyword">await</span> <span class="code-function">sendToExternalAgent</span>(protectedEndpoint.<span class="code-property">anonymized</span>);
+<span class="code-comment">// Your agent maintains control over sensitive data</span>
 </pre>
                         </div>
                     </div>
                 </div>
 
-                <!-- Example 2: RAG Pipeline -->
+                <!-- Example 2: Healthcare AI -->
                 <div class="example-card">
                     <div class="example-header">
-                        <h3>RAG Pipeline Integration</h3>
-                        <p>Protect embeddings and vector databases while maintaining semantic accuracy</p>
+                        <h3>Healthcare AI: Patient Data to 3rd Party Analysis</h3>
+                        <p>Enable healthcare AI agents to send patient data to vendor APIs and agents for analysis while maintaining HIPAA compliance</p>
                     </div>
                     <div class="example-code">
                         <div class="code-header">
                             <div class="code-dot"></div>
                             <div class="code-dot"></div>
                             <div class="code-dot"></div>
-                            <div class="code-title">rag-integration.js</div>
+                            <div class="code-title">healthcare-agent.js</div>
                         </div>
                         <div class="code-content">
 <pre><span class="code-keyword">import</span> { <span class="code-function">PrivacyPalClient</span> } <span class="code-keyword">from</span> <span class="code-string">'privacypal-sdk'</span>;
-<span class="code-keyword">import</span> { <span class="code-function">VectorStore</span> } <span class="code-keyword">from</span> <span class="code-string">'@pinecone/sdk'</span>;
 
 <span class="code-keyword">const</span> <span class="code-property">privacypal</span> = <span class="code-keyword">new</span> <span class="code-function">PrivacyPalClient</span>({
   <span class="code-property">apiKey</span>: process.<span class="code-property">env</span>.<span class="code-property">PRIVACYPAL_API_KEY</span>,
-  <span class="code-property">encoding</span>: <span class="code-string">'two-way'</span> <span class="code-comment">// Enable data recovery</span>
+  <span class="code-property">encoding</span>: <span class="code-string">'two-way'</span>
 });
 
-<span class="code-comment">// Anonymize documents before embedding</span>
-<span class="code-keyword">const</span> <span class="code-property">documents</span> = <span class="code-keyword">await</span> <span class="code-function">loadSensitiveDocs</span>();
-<span class="code-keyword">const</span> <span class="code-property">anonymized</span> = <span class="code-keyword">await</span> privacypal.<span class="code-function">anonymize</span>(documents);
+<span class="code-comment">// Healthcare agent receives patient data</span>
+<span class="code-keyword">const</span> <span class="code-property">patientRecord</span> = {
+  <span class="code-property">patientId</span>: <span class="code-string">'P-12345'</span>,
+  <span class="code-property">name</span>: <span class="code-string">'Jane Doe'</span>,
+  <span class="code-property">dob</span>: <span class="code-string">'1985-03-15'</span>,
+  <span class="code-property">diagnosis</span>: <span class="code-string">'Condition X'</span>,
+  <span class="code-property">labResults</span>: [<span class="code-string">'result1'</span>, <span class="code-string">'result2'</span>]
+};
 
-<span class="code-comment">// Store Data Twin embeddings safely</span>
-<span class="code-keyword">await</span> vectorStore.<span class="code-function">upsert</span>(anonymized.<span class="code-property">embeddings</span>);
+<span class="code-comment">// Protect patient data before sending to 3rd party vendor agent</span>
+<span class="code-keyword">const</span> <span class="code-property">protected</span> = <span class="code-keyword">await</span> privacypal.<span class="code-function">createStream</span>(patientRecord);
 
-<span class="code-comment">// Query and decode results</span>
-<span class="code-keyword">const</span> <span class="code-property">results</span> = <span class="code-keyword">await</span> vectorStore.<span class="code-function">query</span>(userQuestion);
-<span class="code-keyword">const</span> <span class="code-property">original</span> = <span class="code-keyword">await</span> privacypal.<span class="code-function">decode</span>(results);
+<span class="code-comment">// Send Data Twin to vendor's analysis API/agent</span>
+<span class="code-keyword">const</span> <span class="code-property">analysis</span> = <span class="code-keyword">await</span> <span class="code-function">fetch</span>(<span class="code-string">'https://vendor-api.com/analyze'</span>, {
+  <span class="code-property">method</span>: <span class="code-string">'POST'</span>,
+  <span class="code-property">body</span>: <span class="code-function">JSON</span>.<span class="code-function">stringify</span>(protected.<span class="code-property">anonymized</span>)
+});
+
+<span class="code-comment">// Vendor agent processes Data Twin - no real PHI exposed</span>
+<span class="code-comment">// HIPAA compliant ✅</span>
 </pre>
                         </div>
                     </div>
                 </div>
 
-                <!-- Example 3: Multi-Tenant -->
+                <!-- Example 3: Financial Services Dark Pool -->
                 <div class="example-card">
                     <div class="example-header">
-                        <h3>Train AI on Customer Data Safely</h3>
-                        <p>Aggregate multi-tenant customer data for model training without exposing sensitive information</p>
+                        <h3>Financial Services: Decentralized Dark Pool <span style="font-size: 0.6em; background: rgba(76, 73, 255, 0.2); padding: 4px 12px; border-radius: 12px; margin-left: 10px; color: var(--primary-blue);">x402 Coming Soon</span></h3>
+                        <p>Best trade match bot protects trade information and trader identity. Future: Only shares real counterparty data after successful x402 payment request</p>
                     </div>
                     <div class="example-code">
                         <div class="code-header">
                             <div class="code-dot"></div>
                             <div class="code-dot"></div>
                             <div class="code-dot"></div>
-                            <div class="code-title">train-on-customer-data.js</div>
+                            <div class="code-title">dark-pool-agent.js</div>
                         </div>
                         <div class="code-content">
 <pre><span class="code-keyword">import</span> { <span class="code-function">PrivacyPalClient</span> } <span class="code-keyword">from</span> <span class="code-string">'privacypal-sdk'</span>;
+<span class="code-comment">// Future: import { x402Middleware } from '@x402/payment';</span>
 
 <span class="code-keyword">const</span> <span class="code-property">privacypal</span> = <span class="code-keyword">new</span> <span class="code-function">PrivacyPalClient</span>({
   <span class="code-property">apiKey</span>: process.<span class="code-property">env</span>.<span class="code-property">PRIVACYPAL_API_KEY</span>
 });
 
-<span class="code-comment">// Collect data from all your customers</span>
-<span class="code-keyword">const</span> <span class="code-property">customerAData</span> = <span class="code-keyword">await</span> <span class="code-function">fetchCustomerData</span>(<span class="code-string">'customer-a'</span>);
-<span class="code-keyword">const</span> <span class="code-property">customerBData</span> = <span class="code-keyword">await</span> <span class="code-function">fetchCustomerData</span>(<span class="code-string">'customer-b'</span>);
-<span class="code-keyword">const</span> <span class="code-property">customerCData</span> = <span class="code-keyword">await</span> <span class="code-function">fetchCustomerData</span>(<span class="code-string">'customer-c'</span>);
+<span class="code-comment">// Best trade match agent receives trade request</span>
+<span class="code-keyword">const</span> <span class="code-property">tradeRequest</span> = {
+  <span class="code-property">traderId</span>: <span class="code-string">'trader-789'</span>,
+  <span class="code-property">tradeDetails</span>: { <span class="code-property">symbol</span>: <span class="code-string">'AAPL'</span>, <span class="code-property">quantity</span>: <span class="code-number">1000</span> },
+  <span class="code-property">sensitiveInfo</span>: <span class="code-string">'confidential-strategy'</span>
+};
 
-<span class="code-comment">// Anonymize all customer data with Data Twins</span>
-<span class="code-keyword">const</span> <span class="code-property">anonymizedData</span> = <span class="code-keyword">await</span> privacypal.<span class="code-function">createStream</span>([
-  ...customerAData,
-  ...customerBData,
-  ...customerCData
-]);
+<span class="code-comment">// Protect trade info with Data Twin</span>
+<span class="code-keyword">const</span> <span class="code-property">protectedTrade</span> = <span class="code-keyword">await</span> privacypal.<span class="code-function">createStream</span>(tradeRequest);
 
-<span class="code-comment">// Now safely train your AI model on aggregate data</span>
-<span class="code-keyword">await</span> <span class="code-function">trainModel</span>(anonymizedData.<span class="code-property">data</span>);
+<span class="code-comment">// Match agent shares Data Twin (no real data) to find counterparty</span>
+<span class="code-keyword">const</span> <span class="code-property">match</span> = <span class="code-keyword">await</span> <span class="code-function">findCounterparty</span>(protectedTrade.<span class="code-property">anonymized</span>);
 
-<span class="code-comment">// Tell your customers with confidence:</span>
-<span class="code-comment">// "We don't train AI on your real data"</span>
-<span class="code-comment">// Because you're using Data Twins! ✅</span>
+<span class="code-comment">// Future: Counterparty agent receives 402: Payment Required via x402</span>
+<span class="code-keyword">if</span> (match.<span class="code-property">found</span>) {
+  <span class="code-comment">// Future: After successful x402 payment, reveal real counterparty info</span>
+  <span class="code-comment">// await x402Middleware({</span>
+  <span class="code-comment">//   'GET /counterparty': {</span>
+  <span class="code-comment">//     accepts: ['usdc', 'eth'],</span>
+  <span class="code-comment">//     description: 'Counterparty trade information'</span>
+  <span class="code-comment">//   }</span>
+  <span class="code-comment">// });</span>
+  
+  <span class="code-comment">// Only after payment: decode and share real data</span>
+  <span class="code-keyword">const</span> <span class="code-property">realData</span> = <span class="code-keyword">await</span> privacypal.<span class="code-function">decode</span>(protectedTrade);
+  <span class="code-keyword">return</span> realData; <span class="code-comment">// Real counterparty info shared</span>
+}
 </pre>
                         </div>
                     </div>

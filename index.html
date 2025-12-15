@@ -1002,6 +1002,18 @@
             transform: translateY(0);
         }
 
+        /* A2A Section Card Hover Effects */
+        .agent-to-agent .a2a-grid > div:last-child > div {
+            transition: all 0.3s ease;
+        }
+
+        .agent-to-agent .a2a-grid > div:last-child > div:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.35);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
         /* Responsive */
         @media (max-width: 1024px) {
             .hero-container {
@@ -1035,6 +1047,15 @@
 
             .footer-content {
                 grid-template-columns: 1fr 1fr;
+            }
+
+            .a2a-grid {
+                grid-template-columns: 1fr !important;
+                gap: 60px !important;
+            }
+
+            .a2a-grid > div:first-child {
+                text-align: center;
             }
         }
 
@@ -1394,6 +1415,72 @@
                         Install once, forget forever. PrivacyPal works silently in the 
                         background. Use AI like you always have.
                     </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agent-to-Agent Section -->
+    <section class="agent-to-agent scroll-reveal" style="padding: 120px 40px; background: linear-gradient(135deg, #172446 0%, #2d3a5f 100%); color: white; position: relative; overflow: hidden;">
+        <div style="position: absolute; top: -20%; right: -10%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(76, 73, 255, 0.2) 0%, transparent 70%); border-radius: 50%;"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <div class="a2a-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; max-width: 1400px; margin: 0 auto;">
+                <!-- Left Side: Main Content -->
+                <div>
+                    <div style="display: inline-block; padding: 8px 20px; background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 50px; color: white; font-weight: 600; font-size: 0.9rem; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 1px;">
+                        For Developers
+                    </div>
+                    <h2 style="font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; line-height: 1.1; margin-bottom: 30px; color: white;">
+                        Enable <span style="background: linear-gradient(135deg, #ffffff, #36c0de); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Agent-to-Agent</span> Workflows
+                    </h2>
+                    <p style="font-size: 1.3rem; color: rgba(255, 255, 255, 0.9); line-height: 1.8; margin-bottom: 25px;">
+                        Build secure entry points for AI agents to interact with other agents. Protect sensitive data flow 
+                        and create compliant information sharing between agents.
+                    </p>
+                    <p style="font-size: 1.1rem; color: rgba(255, 255, 255, 0.75); line-height: 1.7; margin-bottom: 40px;">
+                        Future capabilities will enable data payment controls, allowing agents to gate access to sensitive information 
+                        and create new economic models for agent-to-agent transactions.
+                    </p>
+                    <a href="developers.html" style="background: white; color: var(--navy); padding: 18px 40px; font-size: 1.1rem; font-weight: 600; border-radius: 50px; text-decoration: none; display: inline-block; transition: all 0.3s ease; box-shadow: 0 10px 40px rgba(255, 255, 255, 0.2);">
+                        Explore A2A Capabilities →
+                    </a>
+                </div>
+
+                <!-- Right Side: Two Vertical Cards -->
+                <div style="display: flex; flex-direction: column; gap: 30px;">
+                    <!-- Card 1: Agent Entry Points -->
+                    <div style="background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(20px); border: 2px solid rgba(255, 255, 255, 0.25); border-radius: 25px; padding: 45px; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                        <div style="position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background: radial-gradient(circle, rgba(76, 73, 255, 0.3) 0%, transparent 70%); border-radius: 50%;"></div>
+                        <div style="position: relative; z-index: 1;">
+                            <div style="width: 56px; height: 56px; margin-bottom: 25px; display: flex; align-items: center; justify-content: center; background: rgba(255, 255, 255, 0.15); border-radius: 15px;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width: 32px; height: 32px; stroke: white; opacity: 0.95;">
+                                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                                    <line x1="12" y1="22.08" x2="12" y2="12"/>
+                                </svg>
+                            </div>
+                            <h3 style="font-size: 1.6rem; font-weight: 700; margin-bottom: 15px; color: white;">Agent Entry Points</h3>
+                            <p style="color: rgba(255, 255, 255, 0.85); line-height: 1.7; font-size: 1.05rem;">
+                                Create protected entry points for your agents to interact with other agents while maintaining control over sensitive data.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Protected Data Flow -->
+                    <div style="background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(20px); border: 2px solid rgba(255, 255, 255, 0.25); border-radius: 25px; padding: 45px; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                        <div style="position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background: radial-gradient(circle, rgba(54, 192, 222, 0.3) 0%, transparent 70%); border-radius: 50%;"></div>
+                        <div style="position: relative; z-index: 1;">
+                            <div style="width: 56px; height: 56px; margin-bottom: 25px; display: flex; align-items: center; justify-content: center; background: rgba(255, 255, 255, 0.15); border-radius: 15px;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width: 32px; height: 32px; stroke: white; opacity: 0.95;">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                </svg>
+                            </div>
+                            <h3 style="font-size: 1.6rem; font-weight: 700; margin-bottom: 15px; color: white;">Protected Data Flow</h3>
+                            <p style="color: rgba(255, 255, 255, 0.85); line-height: 1.7; font-size: 1.05rem;">
+                                Control information flow between agents. Healthcare AI, financial services, and more—all with privacy built-in.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
