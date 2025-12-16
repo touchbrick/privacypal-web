@@ -319,6 +319,66 @@
             margin-bottom: 10px;
         }
 
+        /* Investors Section */
+        .investors {
+            background: #f8f9ff;
+        }
+
+        .investors-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .investors-intro p {
+            font-size: 1.2rem;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .investors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+            align-items: center;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .investor-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            height: 120px;
+        }
+
+        .investor-logo img {
+            max-width: 100%;
+            max-height: 80px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+
+        .investor-logo:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(76, 73, 255, 0.15);
+        }
+
+        .investor-logo:hover img {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+
         /* Footer */
         footer {
             background: #1a1a1a;
@@ -401,6 +461,24 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             text-align: center;
             color: #999;
+            position: relative;
+        }
+
+        .footer-contact {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            text-align: right;
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.6;
+            padding: 20px 0;
+        }
+
+        .footer-contact strong {
+            color: #999;
+            display: block;
+            margin-bottom: 5px;
         }
 
         /* Responsive */
@@ -427,6 +505,18 @@
 
             .footer-content {
                 grid-template-columns: 1fr;
+            }
+
+            .footer-contact {
+                position: static;
+                text-align: center;
+                margin-top: 20px;
+                padding: 0;
+            }
+
+            .investors-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
             }
         }
     </style>
@@ -588,13 +678,36 @@
         </div>
     </section>
 
+    <!-- Investors Section -->
+    <section class="investors">
+        <div class="container">
+            <div class="investors-intro">
+                <h2 class="section-title">Our Investors</h2>
+                <p>
+                    PrivacyPal is backed by some of the leading VCs in the world
+                </p>
+            </div>
+            <div class="investors-grid">
+                <div class="investor-logo">
+                    <img src="investor-borderless.png" alt="Borderless Capital">
+                </div>
+                <div class="investor-logo">
+                    <img src="investor-ov.png" alt="OV">
+                </div>
+                <div class="investor-logo">
+                    <img src="investor-third.png" alt="Investor">
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-brand">
                 <h3>PrivacyPal</h3>
                 <p>
-                    The simple browser extension that lets you use ChatGPT, Claude, and any AI tool 
+                    Use ChatGPT, Claude, and any AI tool 
                     without exposing your sensitive data.
                 </p>
                 <div class="social-links">
@@ -632,6 +745,12 @@
 
         <div class="footer-bottom">
             <p>&copy; 2025 PrivacyPal. All rights reserved. | <a href="mailto:hi@privacypal.ai" style="color: #4c49ff;">hi@privacypal.ai</a></p>
+            <div class="footer-contact">
+                <strong>PrivacyPal</strong>
+                2700 North Military Trail<br>
+                Boca Raton, FL 33431<br>
+                +1 (646) 737-4543
+            </div>
         </div>
     </footer>
 

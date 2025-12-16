@@ -253,6 +253,24 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             text-align: center;
             color: #999;
+            position: relative;
+        }
+
+        .footer-contact {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            text-align: right;
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.6;
+            padding: 20px 0;
+        }
+
+        .footer-contact strong {
+            color: #999;
+            display: block;
+            margin-bottom: 5px;
         }
 
         /* Responsive */
@@ -273,6 +291,13 @@
 
             .footer-content {
                 grid-template-columns: 1fr;
+            }
+
+            .footer-contact {
+                position: static;
+                text-align: center;
+                margin-top: 20px;
+                padding: 0;
             }
         }
     </style>
@@ -413,7 +438,7 @@
             <div class="footer-brand">
                 <h3>PrivacyPal</h3>
                 <p>
-                    The simple browser extension that lets you use ChatGPT, Claude, and any AI tool 
+                    Use ChatGPT, Claude, and any AI tool 
                     without exposing your sensitive data.
                 </p>
                 <div class="social-links">
@@ -451,6 +476,12 @@
 
         <div class="footer-bottom">
             <p>&copy; 2025 PrivacyPal. All rights reserved. | <a href="mailto:hi@privacypal.ai" style="color: #4c49ff;">hi@privacypal.ai</a></p>
+            <div class="footer-contact">
+                <strong>PrivacyPal</strong>
+                2700 North Military Trail<br>
+                Boca Raton, FL 33431<br>
+                +1 (646) 737-4543
+            </div>
         </div>
     </footer>
 
