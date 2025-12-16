@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrivacyPal - Sales Sheet</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+        :root {
+            --primary-dark: #0f172a; /* Slate 900 */
+            --primary-blue: #3b82f6; /* Blue 500 */
+            --accent-green: #22c55e; /* Green 500 */
+            --medical-teal: #0d9488; /* Teal 600 */
+            --text-gray: #475569;    /* Slate 600 */
+            --bg-light: #f8fafc;     /* Slate 50 */
+            --bg-enterprise: #f1f5f9; /* Slate 100 */
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #555; 
+            color: var(--primary-dark);
+            line-height: 1.45;
+        }
+
+        /* Page Container */
+        .page {
+            width: 8.5in;
+            height: 11in;
+            background: white;
+            margin: 20px auto;
+            /* Compact padding to ensure fit */
+            padding: 25px 45px; 
+            position: relative;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            overflow: hidden; 
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Print Specifics */
+        @media print {
+            body { 
+                background: white;
+                margin: 0; 
+            }
+            .page {
+                width: 100%;
+                height: 100%; 
+                margin: 0;
+                padding: 25px 45px;
+                box-shadow: none;
+                page-break-after: always;
+            }
+            .page:last-child {
+                page-break-after: auto;
+            }
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px; 
+            border-bottom: 2px solid var(--bg-light);
+            padding-bottom: 12px;
+            flex-shrink: 0;
+        }
+
+        .logo-img {
+            height: 28px; 
+            display: block;
+        }
+
+        .launch-badge {
+            background-color: #eff6ff;
+            color: var(--primary-blue);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border: 1px solid #dbeafe;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            margin-bottom: 20px;
+            flex-shrink: 0;
+        }
+
+        h1 {
+            font-size: 36px;
+            line-height: 1.1;
+            font-weight: 800;
+            margin: 0 0 8px 0;
+            letter-spacing: -0.02em;
+            background: -webkit-linear-gradient(45deg, var(--primary-dark), var(--primary-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tagline {
+            font-size: 14px;
+            color: var(--text-gray);
+            max-width: 95%;
+            margin: 0 auto;
+            font-weight: 400;
+        }
+
+        /* How it Works */
+        .how-it-works {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+            background: var(--bg-light);
+            padding: 20px;
+            border-radius: 12px;
+            flex-shrink: 0;
+        }
+
+        .step { text-align: center; }
+
+        .step-icon {
+            font-size: 20px;
+            background: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 8px auto;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        .step h3 { font-size: 13px; margin: 0 0 4px 0; font-weight: 700; }
+        .step p { font-size: 11px; color: var(--text-gray); margin: 0; line-height: 1.4; }
+
+        /* Features Grid */
+        .features-container { 
+            margin-bottom: 20px; 
+            flex-shrink: 0;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            color: var(--primary-dark);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px; 
+        }
+
+        .feature-card {
+            border: 1px solid var(--border-color);
+            padding: 12px 15px;
+            border-radius: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            background: white;
+        }
+
+        .feature-icon { font-size: 16px; min-width: 20px; }
+        .feature-content h4 { margin: 0 0 3px 0; font-size: 13px; font-weight: 700; }
+        .feature-content p { margin: 0; font-size: 11px; color: var(--text-gray); line-height: 1.35; }
+
+        /* Developer SDK Section */
+        .developer-section {
+            background: #0f172a;
+            color: white;
+            padding: 18px 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        .dev-content { flex: 1.2; }
+        .dev-content h3 { margin: 0 0 6px 0; font-size: 15px; display: flex; align-items: center; gap: 8px; color: white; }
+        .dev-badge { background: rgba(59, 130, 246, 0.2); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); font-size: 9px; padding: 2px 6px; border-radius: 6px; font-weight: 600; }
+        .dev-content p { margin: 0; font-size: 11px; color: #94a3b8; line-height: 1.4; }
+        
+        .dev-code {
+            flex: 1;
+            background: #1e293b;
+            padding: 10px;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            font-size: 9px;
+            color: #e2e8f0;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .code-keyword { color: #c084fc; } .code-func { color: #60a5fa; } .code-string { color: #4ade80; }
+
+        /* Pricing */
+        .pricing-section { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 15px; 
+            margin-bottom: 5px; /* Minimal margin to footer */
+            flex-shrink: 0;
+        }
+        
+        .plan-card {
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 15px 20px; 
+            background: white;
+            display: flex;
+            flex-direction: column;
+        }
+        .plan-card.enterprise { background: #f1f5f9; border: 1px solid #cbd5e1; }
+        .plan-title { font-size: 10px; text-transform: uppercase; font-weight: 700; letter-spacing: 0.1em; margin-bottom: 5px; display: block; }
+        .price { font-size: 22px; font-weight: 800; margin-bottom: 8px; display: block; color: var(--primary-dark); }
+        .price span { font-size: 12px; font-weight: 500; color: var(--text-gray); }
+        
+        .features-list { list-style: none; padding: 0; margin: 0; font-size: 11px; }
+        .features-list li { margin-bottom: 5px; display: flex; align-items: center; gap: 6px; color: var(--primary-dark); }
+        .dot { height: 5px; width: 5px; background-color: var(--accent-green); border-radius: 50%; display: inline-block; flex-shrink: 0; }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding-top: 12px;
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 10px;
+            color: var(--text-gray);
+            flex-shrink: 0;
+        }
+        .contact-info { display: flex; gap: 15px; font-weight: 500; }
+        .contact-info a { color: var(--primary-blue); text-decoration: none; }
+
+        /* --- HEALTHCARE PAGE STYLES --- */
+        .healthcare-hero h1 {
+            background: -webkit-linear-gradient(45deg, var(--medical-teal), var(--primary-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .compliance-badges {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .badge {
+            border: 1px solid var(--border-color);
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--text-gray);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            background: white;
+        }
+
+        .comparison-container {
+            background: var(--bg-enterprise);
+            border-radius: 12px;
+            padding: 15px; 
+            margin-bottom: 20px;
+            flex-shrink: 0;
+        }
+
+        /* Architecture Flow Visual */
+        .arch-flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .arch-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 120px;
+        }
+
+        .arch-icon {
+            font-size: 16px;
+            background: white;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            border: 1px solid #cbd5e1;
+            margin-bottom: 4px;
+            z-index: 2;
+        }
+
+        .arch-label { font-size: 9px; font-weight: 700; color: var(--primary-dark); text-transform: uppercase; }
+        .arch-desc { font-size: 9px; color: var(--text-gray); line-height: 1.2; }
+        .arch-arrow { color: #94a3b8; font-size: 12px; }
+
+        /* Comparison Grid */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .comparison-col h4 {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .code-box {
+            background: white;
+            border: 1px solid var(--border-color);
+            padding: 10px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 9px;
+            line-height: 1.5;
+            color: var(--text-gray);
+            height: 100%;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .real-data { background: #fee2e2; color: #991b1b; padding: 0 3px; border-radius: 3px; }
+        .avatar-data { background: #dcfce7; color: #166534; padding: 0 3px; border-radius: 3px; font-weight: 600; border: 1px dashed #166534; }
+
+        .phi-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px;
+            margin-top: 6px;
+        }
+
+        .phi-item {
+            font-size: 11px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--text-gray);
+        }
+        
+        .check-icon { color: var(--medical-teal); font-weight: bold; font-size: 9px; }
+        
+    </style>
+</head>
+<body>
+
+    <div class="page">
+        <header>
+            <div class="logo">
+                <img src="https://privacypal.ai/privacypal-logo.png" alt="PrivacyPal Logo" class="logo-img">
+            </div>
+            <div class="launch-badge">🚀 Launching January 2026</div>
+        </header>
+
+        <div class="hero">
+            <h1>Use AI. Stay Private.</h1>
+            <p class="tagline">The simple browser extension that protects your sensitive data when using ChatGPT, Claude, and any AI tool.</p>
+        </div>
+
+        <div class="how-it-works">
+            <div class="step">
+                <div class="step-icon">🔌</div>
+                <h3>1. Install Extension</h3>
+                <p>One-click install. Takes 10 seconds. No configuration needed.</p>
+            </div>
+            <div class="step">
+                <div class="step-icon">💬</div>
+                <h3>2. Use AI Normally</h3>
+                <p>Use ChatGPT or Claude as usual. We work silently in the background.</p>
+            </div>
+            <div class="step">
+                <div class="step-icon">🛡️</div>
+                <h3>3. Stay Protected</h3>
+                <p>We automatically detect sensitive data and swap it with "Data Avatars".</p>
+            </div>
+        </div>
+
+        <div class="features-container">
+            <div class="section-title">Simple. Powerful. Private.</div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <div class="feature-content">
+                        <h4>Instant Protection</h4>
+                        <p>Works in real-time. Your sensitive data is swapped for statistical Data Avatars the moment you type it.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <div class="feature-content">
+                        <h4>Smart Data Twins</h4>
+                        <p>We generate Data Twins that maintain statistical context without exposing real identity.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <div class="feature-content">
+                        <h4>Universal Detection</h4>
+                        <p>Automatically identifies names, emails, financial data, health info, and more.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔐</div>
+                    <div class="feature-content">
+                        <h4>Always Encrypted</h4>
+                        <p>Your data stays encrypted, in your hands, and always private. Even we can't see it.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="developer-section">
+            <div class="dev-content">
+                <h3>Developer SDK <span class="dev-badge">A2A Ready</span></h3>
+                <p>Build secure <strong>Agent-to-Agent</strong> workflows. Our SDK acts as a privacy layer between autonomous agents, allowing them to execute tasks without exposing raw PII.</p>
+            </div>
+            <div class="dev-code">
+                <span class="code-keyword">await</span> privacyPal.a2a.<span class="code-func">send</span>({<br>
+                &nbsp;&nbsp;to: <span class="code-string">'finance-agent'</span>,<br>
+                &nbsp;&nbsp;data: sensitivePayload,<br>
+                &nbsp;&nbsp;mode: <span class="code-string">'TWIN_ONLY'</span><br>
+                });
+            </div>
+        </div>
+
+        <div class="pricing-section">
+            <div class="plan-card">
+                <span class="plan-title" style="color: var(--primary-blue);">For Individuals</span>
+                <div class="price">$8<span>/month</span></div>
+                <ul class="features-list">
+                    <li><span class="dot"></span> 1,000 Data Twins per month</li>
+                    <li><span class="dot"></span> Works with ChatGPT & Claude</li>
+                    <li><span class="dot"></span> Automatic detection</li>
+                </ul>
+            </div>
+            <div class="plan-card enterprise">
+                <span class="plan-title" style="color: var(--primary-dark);">For Enterprise</span>
+                <div class="price">$12k<span>/year (Starts at)</span></div>
+                <ul class="features-list">
+                    <li><span class="dot" style="background: #3b82f6;"></span> Includes 20 PrivacyPal Licenses</li>
+                    <li><span class="dot" style="background: #3b82f6;"></span> Self-host sensitive data</li>
+                    <li><span class="dot" style="background: #3b82f6;"></span> Data sovereignty & compliance</li>
+                </ul>
+            </div>
+        </div>
+
+        <footer>
+            <div>© 2025 PrivacyPal. All rights reserved.</div>
+            <div class="contact-info">
+                <span>hi@privacypal.ai</span>
+                <a href="https://privacypal.ai">www.privacypal.ai</a>
+            </div>
+        </footer>
+    </div>
+
+    <div class="page">
+        <header>
+            <div class="logo">
+                <img src="https://privacypal.ai/privacypal-logo.png" alt="PrivacyPal Logo" class="logo-img">
+            </div>
+            <div class="launch-badge" style="color: var(--medical-teal); border-color: #ccfbf1; background: #f0fdfa;">
+                🏥 Healthcare Edition
+            </div>
+        </header>
+
+        <div class="hero healthcare-hero">
+            <h1>Unlock AI in Healthcare.<br>Protect Patient Data.</h1>
+            <p class="tagline">Enable doctors and staff to leverage LLMs for clinical notes, summaries, and research without ever exposing Protected Health Information (PHI).</p>
+            
+            <div class="compliance-badges">
+                <div class="badge">🔒 HIPAA Compliant</div>
+                <div class="badge">🛡️ SOC2 Ready</div>
+                <div class="badge">📋 BAA Available</div>
+            </div>
+        </div>
+
+        <div class="comparison-container">
+            
+            <div class="arch-flow">
+                <div class="arch-step">
+                    <div class="arch-icon" style="color: #64748b;">👤</div>
+                    <div class="arch-label">You</div>
+                    <div class="arch-desc">Input Patient Data</div>
+                </div>
+                <div class="arch-arrow">➝</div>
+                <div class="arch-step">
+                    <div class="arch-icon" style="color: var(--medical-teal); border-color: var(--medical-teal);">🛡️</div>
+                    <div class="arch-label" style="color: var(--medical-teal);">PrivacyPal</div>
+                    <div class="arch-desc">Swaps for Data Avatar</div>
+                </div>
+                <div class="arch-arrow">➝</div>
+                <div class="arch-step">
+                    <div class="arch-icon" style="color: #3b82f6;">☁️</div>
+                    <div class="arch-label" style="color: #3b82f6;">Public AI</div>
+                    <div class="arch-desc">Processes Safe Data</div>
+                </div>
+            </div>
+
+            <div class="comparison-grid">
+                <div class="comparison-col">
+                    <h4 style="color: #ef4444;">❌ Risk: Real PII</h4>
+                    <div class="code-box">
+                        Patient <span class="real-data">John Smith</span> (DOB <span class="real-data">09/09/1997</span>) SSN <span class="real-data">000-12-1234</span> presents with acute chest pain. History of hypertension. Please summarize for cardiology referral.
+                    </div>
+                </div>
+                <div class="comparison-col">
+                    <h4 style="color: var(--medical-teal);">✅ Safe: Data Avatar</h4>
+                    <div class="code-box">
+                        Patient <span class="avatar-data">Mark Jones</span> (DOB <span class="avatar-data">08/30/1997</span>) SSN <span class="avatar-data">999-55-4321</span> presents with acute chest pain. History of hypertension. Please summarize for cardiology referral.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="features-container" style="margin-top: 35px;">
+            <div class="section-title">Designed for HIPAA Workflows</div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon" style="color: var(--medical-teal);">📋</div>
+                    <div class="feature-content">
+                        <h4>Smart PHI Detection</h4>
+                        <p>Automatically detects and transforms the 18 HIPAA identifiers, including Names, Dates, MRNs, IP addresses, and Biometrics.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" style="color: var(--medical-teal);">🏥</div>
+                    <div class="feature-content">
+                        <h4>On-Premise & Private Cloud</h4>
+                        <p>For large health systems, deploy the PrivacyPal engine within your own VPC. Patient data never leaves your boundary.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" style="color: var(--medical-teal);">🧬</div>
+                    <div class="feature-content">
+                        <h4>Preserve Clinical Context</h4>
+                        <p>We generate Data Twins that maintain age brackets, gender, and clinical relationships so the AI can still give accurate medical advice.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" style="color: var(--medical-teal);">⚖️</div>
+                    <div class="feature-content">
+                        <h4>Audit & Compliance Logs</h4>
+                        <p>Maintain a complete audit trail of every AI interaction. See exactly what data was prompted and how it was anonymized.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="developer-section" style="background: var(--bg-enterprise); border: 1px solid var(--border-color); color: var(--primary-dark);">
+            <div class="dev-content">
+                <h3 style="color: var(--primary-dark);">What We Protect</h3>
+                <p>Our heuristic engine is tuned specifically for medical records and unstructured clinical notes.</p>
+                <div class="phi-list">
+                    <div class="phi-item"><span class="check-icon">✓</span> Names & Initials</div>
+                    <div class="phi-item"><span class="check-icon">✓</span> Medical Record Numbers (MRN)</div>
+                    <div class="phi-item"><span class="check-icon">✓</span> Social Security Numbers</div>
+                    <div class="phi-item"><span class="check-icon">✓</span> Dates (Admit, Discharge, Birth)</div>
+                    <div class="phi-item"><span class="check-icon">✓</span> Phone & Fax Numbers</div>
+                    <div class="phi-item"><span class="check-icon">✓</span> Email Addresses</div>
+                    <div class="phi-item"><span class="check-icon">✓</span> Device Serial Numbers</div>
+                    <div class="phi-item"><span class="check-icon">✓</span> Biometric Identifiers</div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div>© 2025 PrivacyPal. All rights reserved.</div>
+            <div class="contact-info">
+                <span>enterprise@privacypal.ai</span>
+                <a href="https://privacypal.ai/healthcare">privacypal.ai/healthcare</a>
+            </div>
+        </footer>
+    </div>
+
+</body>
+</html>
